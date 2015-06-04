@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Districts -->
+    <string-array name="district">
+        <item>Bilaspur</item>
+        <item>Chamba</item>
+        <item>Hamirpur</item>
+        <item>Kangra</item>
+        <item>Kinnaur</item>
+        <item>Kullu</item>
+        <item>Lahul and Spiti</item>
+        <item>Mandi</item>
+        <item>Shimla</item>
+        <item>Sirmaur</item>
+        <item>Solan</item>
+        <item>UNA</item>
+    </string-array>
+
+    <!-- Blocks goes here -->
+
+    <!-- Block Bilaspur -->
+    <string-array name="block_bilaspur">
+        <item>Bilaspur Sadar</item>
+        <item>Ghumarwin</item>
+        <item>Jhandutta</item>
+        <item>Urban Area</item>
+    </string-array>
+
+    <!-- block Chamba-->
+    <string-array name="block_chamba">
+        <item>Bharmour </item>
+        <item>Bhattiyat</item>
+        <item>Chamba</item>
+        <item>Mehla</item>
+        <item>Pangi</item>
+        <item>Saluni</item>
+        <item>Tisa</item>
+        <item>Urban Area</item>
+    </string-array>
+
+    <!-- block Hamirpur -->
+    <string-array name="block_hamirpur">
+        <item>Bamson </item>
+        <item>Bhoranj</item>
+        <item>Bijhri</item>
+        <item>Hamirpur</item>
+        <item>Nadaun</item>
+        <item>Tira Sujanpur</item>
+        <item>Urban Area</item>
+
+    </string-array>
+
+    <!-- Block Kangra -->
+    <string-array name="block_kangra">
+        <item>Baijnath</item>
+        <item>Bhawarna</item>
+        <item>Dehra Gopipur</item>
+        <item>Dharamshala</item>
+        <item>Fatehpur</item>
+        <item>Indora</item>
+        <item>Kangra</item>
+        <item>Lambagaon</item>
+        <item>Nagrota Bagwan</item>
+        <item>Nagrota Surian</item>
+        <item>Nurpur</item>
+        <item>Panchrukhi</item>
+        <item>Pragpur</item>
+        <item>Rait</item>
+        <item>Sulah</item>
+        <item>Urban Area</item>
+
+    </string-array>
+
+    <!-- block kinnaur -->
+    <string-array name="block_kinnaur">
+        <item>Kalpa</item>
+        <item>Nichar</item>
+        <item>Pooh</item>
+        <item>Urban Area</item>
+
+    </string-array>
+
+    <!-- block Kullu -->
+    <string-array name="block_kullu">
+        <item>Anni</item>
+        <item>Banjar</item>
+        <item>Kullu</item>
+        <item>Naggar</item>
+        <item>Nirmand</item>
+        <item>Urban Area</item>
+    </string-array>
+
+    <!-- block Lahul and Spiti -->
+    <string-array name="block_lahul_and_spiti">
+        <item>Lahul</item>
+        <item>Spiti</item>
+        <item>Udaipur</item>
+        <item>Urban Area</item>
+    </string-array>
+
+    <!-- Block Mandi-->
+    <string-array name="block_mandi">
+        <item>Balh</item>
+        <item>Chauntra</item>
+        <item>Dharmpur</item>
+        <item>Drang</item>
+        <item>Gohar</item>
+        <item>Gopalpur</item>
+        <item>Kasog</item>
+        <item>Mandi Sadar</item>
+        <item>Seraj</item>
+        <item>Sundarnagar</item>
+        <item>Urban Area</item>
+
+    </string-array>
+
+
+
+
+    <!-- Block Shimla -->
+    <string-array name="block_shimla">
+        <item>Basantpur</item>
+        <item>Chauhara</item>
+        <item>Chaupal</item>
+        <item>Jubbal Kotkhai</item>
+        <item>Mashobra</item>
+        <item>Nankhari</item>
+        <item>Narkanda</item>
+        <item>Rampur</item>
+        <item>Rohru</item>
+        <item>Theog</item>
+        <item>Urban Area</item>
+    </string-array>
+
+
+    <!-- Block sirmaur -->
+    <string-array name="block_sirmaur">
+        <item>Nahan</item>
+        <item>Pachhad</item>
+        <item>Paonta Sahib</item>
+        <item>Rajgarh</item>
+        <item> Sangrah</item>
+        <item>Shillai</item>
+        <item>Urban Area</item>
+    </string-array>
+
+
+    <!-- block solan -->
+    <string-array name="block_solan">
+        <item>Dharampur</item>
+        <item>Kandaghat</item>
+        <item>Kunihar</item>
+        <item>Nalagarh</item>
+        <item>Solan</item>
+        <item>Urban Area</item>
+    </string-array>
+
+
+    <!-- block una -->
+    <string-array name="block_una">
+        <item>Amb</item>
+        <item>Bangana</item>
+        <item>Gagret</item>
+        <item>Haroli</item>
+        <item>Una</item>
+        <item>Urban Area</item>
+    </string-array>
+
+
+</resources>
