@@ -1,6 +1,7 @@
 package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -65,7 +66,20 @@ public class DateTimePicker extends ActionBarActivity {
                 mSelectedMonth=month;
                 mSelectedYear=year;
 
-                Toast.makeText(DateTimePicker.this, "" + month + " " + year + " " + date, Toast.LENGTH_LONG).show();
+               // Toast.makeText(DateTimePicker.this, "" + month + " " + year + " " + date, Toast.LENGTH_LONG).show();
+
+               // Intent i = new Intent(DateTimePicker.this,MainActivity.class);
+               // setResult(2, i);
+               // i.putExtra("name",Integer.toString(year));
+               // startActivityForResult(i,2);
+               // finish();
+
+                Intent intent = new Intent();
+                intent.putExtra("year",Integer.toString(year));
+                setResult(RESULT_OK, intent);
+                finish();
+
+
             }
         };
 
@@ -75,11 +89,11 @@ public class DateTimePicker extends ActionBarActivity {
     }
 
     private void setUpTitleBar() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(false);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.action_bar_color)));
 
         getSupportActionBar().setCustomView(R.layout.custom_action_bar);

@@ -13,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import in.gov.hp.aadhaar.presentation.testtwo;
 
@@ -24,11 +26,16 @@ public class MainActivity extends testtwo {
     Spinner district_spinner , block_spinner ;
     LinearLayout layout_block;
     Button date_of_birth;
+    TextView DOB;
+    private int mRequestCode = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // extras = getIntent().getExtras();
+
 
         initialize_components();
         districts = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.district));
@@ -56,19 +63,45 @@ public class MainActivity extends testtwo {
             @Override
             public void onClick(View v) {
                    Intent i = new Intent(MainActivity.this , DateTimePicker.class);
-                    startActivity(i);
+                    startActivityForResult(i,mRequestCode);
             }
         });
+
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == mRequestCode && resultCode == RESULT_OK){
+            String name = data.getStringExtra("year");
+            Toast.makeText(getApplicationContext(),name + "kush",Toast.LENGTH_LONG).show();
+            DOB.setText(name);
+        }
     }
 
+
+    /*
+    @Override
+   protected void onResume(){
+
+        if(extras != null){
+            String name =extras.getString("name");
+            //DOB.setText(name);
+            Toast.makeText(getApplicationContext(),name + "kush",Toast.LENGTH_LONG).show();
+
+        }
+    }*/
     private void initialize_components(){
         district_spinner = (Spinner)findViewById(R.id.district_sp);
        // block_spinner = (Spinner)findViewById(R.id.block_sp);
         //layout_block = (LinearLayout)findViewById(R.id.layout_block);
         date_of_birth = (Button)findViewById(R.id.bt_dob_dialog);
+        DOB = (TextView)findViewById(R.id.tv_dob_dialog);
 
 
     }
+
+
 
     class SetData_Spinner extends AsyncTask<String,String,String> {
 
