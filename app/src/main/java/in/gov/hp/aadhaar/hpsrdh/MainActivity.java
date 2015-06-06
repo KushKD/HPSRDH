@@ -2,24 +2,28 @@ package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import in.gov.hp.aadhaar.presentation.testtwo;
 
-public class MainActivity extends Activity {
+
+public class MainActivity extends testtwo {
 
     ArrayAdapter<String> districts = null;
     ArrayAdapter<String> blocks = null;
     Spinner district_spinner , block_spinner ;
     LinearLayout layout_block;
+    Button date_of_birth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,20 +43,29 @@ public class MainActivity extends Activity {
                 int id_district = district_spinner.getSelectedItemPosition();
                 // Toast.makeText(getApplicationContext(),Integer.toString(id_district),Toast.LENGTH_LONG).show();
 
-                SetData_Spinner SD = new SetData_Spinner();
-                SD.execute(Integer.toString(id_district));
+                // SetData_Spinner SD = new SetData_Spinner();
+                // SD.execute(Integer.toString(id_district));
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {// do nothing
             }
 
         });
+
+        date_of_birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                   Intent i = new Intent(MainActivity.this , DateTimePicker.class);
+                    startActivity(i);
+            }
+        });
     }
 
     private void initialize_components(){
         district_spinner = (Spinner)findViewById(R.id.district_sp);
-        block_spinner = (Spinner)findViewById(R.id.block_sp);
-        layout_block = (LinearLayout)findViewById(R.id.layout_block);
+       // block_spinner = (Spinner)findViewById(R.id.block_sp);
+        //layout_block = (LinearLayout)findViewById(R.id.layout_block);
+        date_of_birth = (Button)findViewById(R.id.bt_dob_dialog);
 
 
     }
@@ -127,7 +140,7 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            layout_block.setVisibility(View.VISIBLE);
+           layout_block.setVisibility(View.VISIBLE);
             block_spinner.setAdapter(blocks);
             dialog.dismiss();
 

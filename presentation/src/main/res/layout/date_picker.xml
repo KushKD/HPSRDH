@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout"
+    android:background="@color/material_background"
+    android:splitMotionEvents="false"
+    tools:context=".MyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:splitMotionEvents="false"
+        android:orientation="horizontal">
+
+
+            <ListView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/month_listview"
+                android:scrollbars="none"
+                android:listSelector="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="@dimen/listview_divider_height"
+                android:layout_marginLeft="@dimen/listview_left_margin"
+                ></ListView>
+
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/date_listview"
+            android:scrollbars="none"
+            android:listSelector="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/listview_divider_height"
+            android:layout_marginLeft="@dimen/listview_left_margin"
+            ></ListView>
+
+
+
+    <ListView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/year_listview"
+        android:scrollbars="none"
+        android:listSelector="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/listview_divider_height"
+        android:layout_marginLeft="@dimen/listview_left_margin"
+        android:layout_marginRight="@dimen/listview_right_margin"
+
+        ></ListView>
+
+    </LinearLayout>
+</RelativeLayout>
+
+

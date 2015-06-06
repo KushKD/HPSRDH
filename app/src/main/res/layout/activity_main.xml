@@ -1,7 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/material_deep_teal_500">
 
     <LinearLayout
 
@@ -28,9 +29,10 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/header"
+                    android:background="#FF545454"
                     android:text="Header: HPSRDH"/>
 
             </LinearLayout>
@@ -79,7 +81,62 @@
         </LinearLayout>
 
 
-        <!-- Block -->
+        <!-- Date OF Birth -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:baselineAligned="false"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:id="@+id/dob_tv"
+                    android:text="Date Of Birth"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Select Date"
+                    android:id="@+id/bt_dob_dialog"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="02/23/2014"
+                    android:id="@+id/tv_dob_dialog"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Block
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,7 +175,7 @@
                     android:id="@+id/block_sp"/>
 
             </LinearLayout>
-        </LinearLayout>
+        </LinearLayout>   -->
 
         <!-- Name -->
         <LinearLayout

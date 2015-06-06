@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':hpsrdh.presentation', ':presentation', ':datetimepicker_presentation-library'
