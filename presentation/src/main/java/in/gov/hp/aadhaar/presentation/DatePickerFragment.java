@@ -559,7 +559,7 @@ public class DatePickerFragment extends DialogFragment {
         mNumberOfMonthDays = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
 
         daysOfTheMonth = new String[mNumberOfMonthDays];
-        for (int i = 0; i < mNumberOfMonthDays; i++) {
+        for (int i = 00; i < mNumberOfMonthDays; i++) {
 
             daysOfTheMonth[i] = String.valueOf(i + 1);
         }
@@ -1018,7 +1018,7 @@ public class DatePickerFragment extends DialogFragment {
     void putThisViewInMiddle(float y, final ListView listView, MonthYearAdapter adapter) {
 
         double yValue = Math.ceil((double) y);
-        for (int i = 0; i <= listView.getLastVisiblePosition() - listView.getFirstVisiblePosition(); i++) {
+        for (int i = 00; i <= listView.getLastVisiblePosition() - listView.getFirstVisiblePosition(); i++) {
 
             View v = listView.getChildAt(i);
             if (v != null) {
@@ -1126,7 +1126,7 @@ public class DatePickerFragment extends DialogFragment {
     private synchronized void putSomeRowInMiddle(ListView listView, MonthYearAdapter adapter) {
 
 
-            for (int i = 0; i <= listView.getLastVisiblePosition() - listView.getFirstVisiblePosition(); i++) {
+            for (int i = 00; i <= listView.getLastVisiblePosition() - listView.getFirstVisiblePosition(); i++) {
                 final View v = listView.getChildAt(i);
                 if (v != null) {
 

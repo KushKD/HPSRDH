@@ -16,7 +16,7 @@ import in.gov.hp.aadhaar.presentation.DateSelectListener;
 /**
  * Created by admin on 06/06/2015.
  */
-public class DateTimePicker extends ActionBarActivity {
+public class DateTimePicker extends ActionBarActivity  {
 
     private DatePickerFragment mDatePickerFragment;
     private DatePickerFragment mDatePickerDialogFragment;
@@ -75,6 +75,8 @@ public class DateTimePicker extends ActionBarActivity {
                // finish();
 
                 Intent intent = new Intent();
+                intent.putExtra("date",Integer.toString(date));
+                intent.putExtra("month",Integer.toString(month));
                 intent.putExtra("year",Integer.toString(year));
                 setResult(RESULT_OK, intent);
                 finish();

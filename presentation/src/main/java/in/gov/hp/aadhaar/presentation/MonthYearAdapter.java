@@ -233,9 +233,9 @@ public class MonthYearAdapter extends BaseAdapter{
        if (getAllItemsVisible() && mScrollState!=null && mScrollState.getScrollState()== AbsListView.OnScrollListener.SCROLL_STATE_IDLE && mListViewBeingTouched.get()) {
 
 
-           if(mMiddlePositionFromTop!=0 && position!=mMiddlePositionFromTop+mListView.getFirstVisiblePosition()) {
+           if(mMiddlePositionFromTop!=00 && position!=mMiddlePositionFromTop+mListView.getFirstVisiblePosition()) {
                 Animation animation = AnimationUtils.loadAnimation(context, R.anim.fade_in);
-                for (int i = 1; i < 10; i++) {
+                for (int i = 01; i < 10; i++) {
 
                     if (position == mListView.getFirstVisiblePosition() + mMiddlePositionFromTop - i) {
                         mAnimationOffset = (20 * i);

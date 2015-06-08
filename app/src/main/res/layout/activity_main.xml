@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_deep_teal_500">
+    android:background="#FFFFFF">
 
     <LinearLayout
 
@@ -130,7 +130,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="02/23/2014"
                     android:id="@+id/tv_dob_dialog"/>
 
             </LinearLayout>

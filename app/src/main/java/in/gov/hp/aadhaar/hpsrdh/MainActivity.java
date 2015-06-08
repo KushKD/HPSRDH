@@ -4,13 +4,17 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,7 +23,7 @@ import android.widget.Toast;
 import in.gov.hp.aadhaar.presentation.testtwo;
 
 
-public class MainActivity extends testtwo {
+public class MainActivity extends Activity {
 
     ArrayAdapter<String> districts = null;
     ArrayAdapter<String> blocks = null;
@@ -27,7 +31,29 @@ public class MainActivity extends testtwo {
     LinearLayout layout_block;
     Button date_of_birth;
     TextView DOB;
-    private int mRequestCode = 100;
+    private int mRequestCode = 2;
+
+    // variables to store the selected date and time
+    private int mSelectedYear;
+    private int mSelectedMonth;
+    private int mSelectedDay;
+    private int mSelectedHour;
+    private int mSelectedMinutes;
+
+    // CallBacks for date and time pickers
+    private OnDateSetListener mOnDateSetListener = new OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            // update the current variables ( year, month and day)
+            mSelectedDay = dayOfMonth;
+            mSelectedMonth = monthOfYear;
+            mSelectedYear = year;
+
+            // update txtDate with the selected date
+            updateDateUI();
+        }
+    };
 
 
     @Override
@@ -62,24 +88,57 @@ public class MainActivity extends testtwo {
         date_of_birth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                   Intent i = new Intent(MainActivity.this , DateTimePicker.class);
-                    startActivityForResult(i,mRequestCode);
+                   //Intent i = new Intent(MainActivity.this , DateTimePicker.class);
+                   // startActivityForResult(i,2);
+
+                showDatePickerDialog(mSelectedYear, mSelectedMonth, mSelectedDay, mOnDateSetListener);
             }
         });
 
 
     }
+    // initialize the DatePickerDialog
+    private DatePickerDialog showDatePickerDialog(int initialYear, int initialMonth, int initialDay, OnDateSetListener listener) {
+        DatePickerDialog dialog = new DatePickerDialog(this, listener, initialYear, initialMonth, initialDay);
+        dialog.setTitle("Please Select Your Date Of Birth");
+        dialog.show();
+        return dialog;
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == mRequestCode && resultCode == RESULT_OK){
-            String name = data.getStringExtra("year");
-            Toast.makeText(getApplicationContext(),name + "kush",Toast.LENGTH_LONG).show();
-            DOB.setText(name);
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK) {
+                String main_date = data.getStringExtra("date");
+                String main_month = data.getStringExtra("month");
+                String main_year = data.getStringExtra("year");
+                Toast.makeText(getApplicationContext(), main_date + "/" + main_month + "/" + main_year, Toast.LENGTH_LONG).show();
+
+                StringBuilder sb = new StringBuilder();
+                sb.append(main_date);
+                sb.append("/");
+                sb.append(main_month);
+                sb.append("/");
+                sb.append(main_year);
+
+                String date = sb.toString();
+                if (date.charAt(1) == '/') date = "0" + date;
+                if (date.charAt(4) == '/') date = date.substring(0, 3) + "0" + date.substring(3);
+                DOB.setText(date);
+            }else{
+                Toast.makeText(getApplicationContext(),"Where Am I",Toast.LENGTH_LONG).show();
+            }
+        }else{
+            Toast.makeText(getApplicationContext(), "Where Am I two", Toast.LENGTH_LONG).show();
         }
     }
 
-
+    private void updateDateUI() {
+        String month = ((mSelectedMonth+1) > 9) ? ""+(mSelectedMonth+1): "0"+(mSelectedMonth+1) ;
+        String day = ((mSelectedDay) < 10) ? "0"+mSelectedDay: ""+mSelectedDay ;
+        DOB.setText(day+"/"+month+"/"+mSelectedYear);
+    }
     /*
     @Override
    protected void onResume(){
