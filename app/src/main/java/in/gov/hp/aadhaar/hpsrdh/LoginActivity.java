@@ -24,7 +24,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_in);
         tv_IMEI = (TextView)findViewById(R.id.tv_imei);
         button_main = (RelativeLayout)findViewById(R.id.button_main);
 
