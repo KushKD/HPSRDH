@@ -23,6 +23,8 @@
 	                  <TextView
 						  android:id="@+id/textView1"
 	                    style="@style/text_title"
+						  android:textStyle="bold"
+						  android:textSize="22dp"
 	                    android:text="Advanced Search" />
 	           </LinearLayout>
 	           
@@ -35,6 +37,8 @@
 	                <TextView
 	                    android:id="@+id/textView2"
 	                    style="@style/text_title"
+						android:textStyle="bold"
+						android:textSize="22dp"
 	                    android:text="Basic Search" />
 	        
 	           </LinearLayout>

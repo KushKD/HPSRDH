@@ -43,7 +43,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/search_uid" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image_search_by_uid"
-                    android:layout_marginLeft="75dip"
+                    android:layout_marginLeft="60dip"
                     android:gravity="center"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
@@ -119,7 +119,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/phone" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -129,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image_search_by_phone_number"
-                    android:layout_marginLeft="75dip"
+                    android:layout_marginLeft="60dip"
                     android:gravity="center"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
@@ -151,8 +151,8 @@
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
+        android:orientation="horizontal"
+        android:gravity="center|center_horizontal|center_vertical"
         android:layout_weight="5" >
 
         <TextView android:layout_width="wrap_content"
@@ -161,9 +161,12 @@
             android:layout_height="wrap_content"></TextView>
 
         <Button
-            android:layout_gravity="center|center_horizontal|center_vertical"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:textColor="#fab60f"
+            android:background="#d52736"
             android:text="Search"></Button>
 
     </LinearLayout>

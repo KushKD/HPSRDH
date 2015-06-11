@@ -25,6 +25,7 @@ public class SignIn extends Activity {
             public void onClick(View v) {
                 Intent i_2 = new Intent(SignIn.this , ViewPagerStyle1Activity.class);
                 startActivity(i_2);
+                SignIn.this.finish();
             }
         });
 

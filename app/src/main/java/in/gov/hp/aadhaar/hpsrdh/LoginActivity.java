@@ -36,6 +36,8 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this , SignIn.class );
                 startActivity(i);
+                LoginActivity.this.finish();
+
             }
         });
     }

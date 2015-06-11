@@ -43,7 +43,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/district" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -97,7 +97,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/date_of_birth" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -150,7 +150,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/name" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -202,7 +202,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/father_husband" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -255,7 +255,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:src="@drawable/pincode" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -287,20 +287,26 @@
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
+        android:orientation="horizontal"
+        android:gravity="center|center_horizontal|center_vertical"
         android:layout_weight="5" >
 
         <TextView android:layout_width="wrap_content"
             android:background="@mipmap/footer_aadhaar"
+
             android:layout_gravity="left|center_horizontal|center_vertical"
             android:layout_height="wrap_content"></TextView>
 
         <Button
-            android:layout_gravity="center|center_horizontal|center_vertical"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:textColor="#fab60f"
+            android:background="#d52736"
             android:text="Search"></Button>
+
+
 
     </LinearLayout>
 

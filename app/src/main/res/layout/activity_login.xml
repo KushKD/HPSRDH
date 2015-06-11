@@ -114,9 +114,9 @@
                     <ImageView
                         android:id="@+id/list_image_username"
                         android:contentDescription="@string/app_name"
-                        android:layout_width="60dip"
-                        android:layout_height="60dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:layout_width="40dip"
+                        android:layout_height="40dip"
+                        android:src="@drawable/username" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -177,9 +177,9 @@
                     <ImageView
                         android:id="@+id/list_image_password"
                         android:contentDescription="@string/app_name"
-                        android:layout_width="60dip"
-                        android:layout_height="60dip"
-                        android:src="@drawable/lock_login_screen" />
+                        android:layout_width="40dip"
+                        android:layout_height="40dip"
+                        android:src="@drawable/password" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 

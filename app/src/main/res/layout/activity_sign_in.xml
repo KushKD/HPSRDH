@@ -72,6 +72,7 @@
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:layout_margin="10dp"
+            android:gravity="center|center_horizontal|center_vertical"
             android:id="@+id/button_main"
             android:orientation="horizontal"
             android:padding="5dip" >
@@ -86,16 +87,16 @@
                 <ImageView
                     android:id="@+id/list_image"
                     android:contentDescription="@string/app_name"
-                    android:layout_width="60dip"
-                    android:layout_height="60dip"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
                     android:src="@drawable/lock_login_screen" />
             </LinearLayout>
             <!-- Rightend Arrow -->
             <ImageView
                 android:id="@+id/imageView1"
                 android:contentDescription="@string/app_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/arrow1" />
@@ -105,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/list_image"
-                android:layout_marginLeft="75dip"
+                android:layout_marginLeft="50dip"
                 android:gravity="center"
                 android:layout_centerVertical="true"
                 android:paddingBottom ="10dip"
@@ -114,18 +115,6 @@
                 android:textSize="20dip"
                 android:textStyle="bold"
                 android:typeface="sans" />
-            <!-- Weather Information-->
-            <!--   <Button
-                   android:id="@+id/buttonSignIn"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@+id/tvCity"
-                   android:layout_alignLeft="@+id/tvCity"
-                   android:paddingTop="5dip"
-                   android:layout_centerHorizontal="true"
-                   android:text="Sign In"
-                   android:textColor="#343434"
-                   android:textSize="15dip" />  -->
         </RelativeLayout>
 
 
