@@ -32,6 +32,9 @@
             android:name=".SignIn"
             android:label="@string/title_activity_sign_in" >
         </activity>
+
+        <activity android:name=".ViewPagerStyle1Activity"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>
