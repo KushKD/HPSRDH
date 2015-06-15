@@ -123,20 +123,18 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_username"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image_username"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
                     android:textColor="#d52736"
-                    android:text=""
                     android:hint="Username"
                     android:textColorHint="#d52736"
                     android:textSize="20dip"
-                    android:textStyle="bold"
                     android:typeface="sans" />
                 <!-- Weather Information-->
                 <!--   <Button
@@ -186,11 +184,11 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/editText_password"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
                     android:textColor="#d52736"

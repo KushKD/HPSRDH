@@ -48,22 +48,16 @@
                 <!-- Rightend Arrow -->
 
                 <!-- City -->
-                <EditText
+                <Spinner
                     android:id="@+id/edit_text_district"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image_district"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
-                    android:background="#FFFFFF"
+
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
-                    android:textColor="#d52736"
-                    android:text=""
-                    android:hint="District"
-                    android:textColorHint="#d52736"
-                    android:textSize="20dip"
-                    android:typeface="sans" />
+                   />
 
             </RelativeLayout>
         </LinearLayout>
@@ -102,13 +96,13 @@
                 <!-- Rightend Arrow -->
 
                 <!-- City -->
-                <EditText
+                <TextView
                     android:id="@+id/edit_text_date_of_birth"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image_date_of_birth"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
@@ -157,11 +151,11 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_image_name"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
@@ -209,11 +203,11 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_father_husband_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_father_husband_name"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
@@ -262,14 +256,15 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_pincode"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/list_pincode"
                     android:layout_marginLeft="75dip"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:background="#FFFFFF"
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
+                    android:inputType="number"
                     android:textColor="#d52736"
                     android:text=""
                     android:hint="Pincode"
@@ -298,6 +293,7 @@
             android:layout_height="wrap_content"></TextView>
 
         <Button
+            android:id="@+id/button_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
