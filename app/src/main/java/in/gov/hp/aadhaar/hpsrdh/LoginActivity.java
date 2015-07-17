@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 
-    String IMIE_Number = null;
+
     TextView tv_IMEI ;
     RelativeLayout button_main;
 
@@ -28,8 +28,8 @@ public class LoginActivity extends Activity {
         tv_IMEI = (TextView)findViewById(R.id.tv_imei);
         button_main = (RelativeLayout)findViewById(R.id.button_main);
 
-      IMIE_Number = getIMEI(LoginActivity.this);
-        tv_IMEI.setText(IMIE_Number);
+
+        //tv_IMEI.setText(IMIE_Number);
 
         button_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,13 +44,6 @@ public class LoginActivity extends Activity {
 
 
 
-    public String getIMEI(Context context){
 
-
-        TelephonyManager mngr = (TelephonyManager) context.getSystemService(context.TELEPHONY_SERVICE);
-        String imei = mngr.getDeviceId();
-        return imei;
-
-    }
 
 }
