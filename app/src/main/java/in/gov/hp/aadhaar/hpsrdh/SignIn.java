@@ -19,6 +19,8 @@ public class SignIn extends Activity {
     Button login;
     EditText username , password;
     public static final String url_loginService = "" ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,12 +61,20 @@ public class SignIn extends Activity {
 
           String username_service =  params[0];
           String password_service = params[1];
+
+          /*
+            Encryption goes here
+           */
+          EncryptData crypt = new EncryptData();
+          String crypt_username = crypt.Encrypt_String(username_service);
+          String crypt_password = crypt.Encrypt_String(password_service);
+
           StringBuilder sb = new StringBuilder();
           sb.append(url_loginService);
           sb.append("/");
-          sb.append(username_service);
+          sb.append(crypt_username);
           sb.append("/");
-          sb.append(password_service);
+          sb.append(crypt_password);
 
          Log.d("Service is" , sb.toString());
 
