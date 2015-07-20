@@ -1,6 +1,7 @@
 package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -80,9 +81,16 @@ public class SignIn extends Activity {
 
   protected class logIn extends AsyncTask<String,String,String>{
 
+      private ProgressDialog dialog;
+      Boolean Server_value = false;
       @Override
       protected void onPreExecute() {
           super.onPreExecute();
+
+           dialog = new ProgressDialog(SignIn.this);
+          this.dialog.setMessage("Please wait");
+          this.dialog.show();
+
       }
 
       @Override
@@ -102,13 +110,9 @@ public class SignIn extends Activity {
 
           StringBuilder sb = new StringBuilder();
           sb.append(url_loginService);
-          sb.append("/api");
-          sb.append("/UserLogin?username=");
-          sb.append(crypt_username);
-          sb.append("&password=");
-          sb.append(crypt_password);
-          sb.append("&imei=");
-          sb.append(imei_service);
+          sb.append("/api/UserLogin?username=");sb.append(crypt_username);
+          sb.append("&password=");sb.append(crypt_password);
+          sb.append("&imei=");sb.append(imei_service);
 
          url = sb.toString();
          Log.d("Service is" , url);
@@ -117,7 +121,8 @@ public class SignIn extends Activity {
          String result  = jParser.getDataRest(url);
           // Now call the Service
 
-
+         // System.out.print("Here is the ... "+result);myStringBuilder.delete(0, myStringBuilder.length());
+          sb.delete(0, sb.length());
 
             return  result;
       }
@@ -126,12 +131,18 @@ public class SignIn extends Activity {
       protected void onPostExecute(String s) {
           super.onPostExecute(s);
 
-          if(s.equalsIgnoreCase("true")) {
+          this.dialog.dismiss();
+
+         // System.out.print("Here is the ... two..."+s);
+          String value_server  = s;
+         // System.out.print("Here is the ... three ..."+value_server);
+          if(value_server.trim().equalsIgnoreCase("true")) {
               Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
               startActivity(i_2);
               SignIn.this.finish();
           }else {
               Toast.makeText(getApplicationContext(),"Sorry, You are not a valid User. Please Try again",Toast.LENGTH_LONG).show();
+              //System.out.print("Here is the ... four ..." + value_server);
           }
       }
   }

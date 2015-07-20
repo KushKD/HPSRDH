@@ -27,7 +27,7 @@ public class JSONParser {
 
     static InputStream is = null;
     static String verify = null;
-    static String json_varification = "";
+   public  String varification = "";
 
 
     public JSONParser() {
@@ -71,24 +71,18 @@ public class JSONParser {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
-                System.out.println(line);
+                //System.out.println("This is the RESPONSE I'm Getting"+line);
             }
             is.close();
-            json_varification = sb.toString();
-            System.out.println(json_varification);
+            varification = sb.toString();
+            System.out.println(varification);
+
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
+            return "";
         }
 
-
-        try {
-            //jObj = new JSONArray(json);
-            verify = json_varification;
-        } catch (Exception e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
-        }
-
-        return verify;
+        return varification;
     }
 
 }
