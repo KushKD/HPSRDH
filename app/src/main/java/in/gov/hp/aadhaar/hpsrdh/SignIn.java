@@ -21,7 +21,7 @@ public class SignIn extends Activity {
 
     Button login;
     EditText username , password;
-    public static final String url_loginService = "http://10.241.13.65/aadhaar" ;
+    private static final String url_loginService = "http://10.241.13.65/aadhaar" ;
     public String IMIE_Number ;
 
 
@@ -141,8 +141,12 @@ public class SignIn extends Activity {
               startActivity(i_2);
               SignIn.this.finish();
           }else {
-              Toast.makeText(getApplicationContext(),"Sorry, You are not a valid User. Please Try again",Toast.LENGTH_LONG).show();
+             // Toast.makeText(getApplicationContext(),"Sorry, You are not a valid User. Please Try again",Toast.LENGTH_LONG).show();
               //System.out.print("Here is the ... four ..." + value_server);
+              Intent i_3 = new Intent(SignIn.this, LogOut.class);
+              startActivity(i_3);
+              SignIn.this.finish();
+
           }
       }
   }

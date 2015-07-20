@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    tools:context="in.gov.hp.aadhaar.hpsrdh.LogOut"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_logout"
+        android:hint="Enter Your User ID"
+        android:layout_width="match_parent"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:textSize="22sp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/logoutbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out"/>
+
+</LinearLayout>

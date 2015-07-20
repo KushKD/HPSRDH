@@ -33,9 +33,14 @@
             android:name=".SignIn"
             android:label="@string/title_activity_sign_in" >
         </activity>
-
-        <activity android:name=".ViewPagerStyle1Activity"
-            android:launchMode="singleInstance"/>
+        <activity
+            android:name=".ViewPagerStyle1Activity"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".LogOut"
+            android:label="@string/title_activity_log_out"
+            android:launchMode="singleInstance">
+        </activity>
     </application>
 
 </manifest>
