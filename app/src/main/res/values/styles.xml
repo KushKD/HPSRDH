@@ -2,15 +2,17 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
         <!-- Customize your theme here. -->
         <item name="android:background">@null</item>
         <item name="android:windowNoTitle">true</item>
+
     </style>
 
     <style name="text_title">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/red</item>
+        <item name="android:textColor">@drawable/tab_txt_color</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -35,17 +37,118 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="layout_w_f">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="layout_m_w">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layout_w_m">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <style name="h_line">
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1.5dip</item>
+        <item name="android:layout_height">1.5dp</item>
         <item name="android:background">@color/gray</item>
     </style>
 
     <style name="indicator_style">
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">4dip</item>
-        <item name="android:background">@color/red</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:background">#D52736</item>
         <item name="android:orientation">vertical</item>
     </style>
 
+    <!-- Text Box Style-->
+    <style name="TextBox" parent="layout_wrap">
+
+        <!--Orientation-->
+        <item name="android:layout_marginLeft">75dip</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:gravity">center</item>
+
+        <!--Text Type-->
+        <item name="android:text"></item>
+        <item name="android:textSize">@dimen/txt_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+
+        <!--Colors-->
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#D52736</item>
+        <item name="android:textColorHint">#D52736</item>
+
+    </style>
+
+    <style name="colors_button" parent="layout_wrap">
+        <item name="android:textColor">#fab60f</item>
+        <item name="android:background">#d52736</item>
+    </style>
+
+    <!--Button Style-->
+    <style name="Button" parent="colors_button">
+        <item name="android:gravity">center|center_vertical|center_horizontal</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">#fab60f</item>
+        <item name="android:background">#d52736</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!--Search Button-->
+    <style name="Button.Search" parent="colors_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">#fab60f</item>
+        <item name="android:background">#d52736</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!--Aadhaar Footer-->
+    <style name="Footer" parent="layout_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@mipmap/footer_aadhaar</item>
+        <item name="android:layout_gravity">left|center_horizontal|center_vertical</item>
+    </style>
+
+    <!--Image Holder-->
+    <style name="ImageHolder" parent="layout_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <!--TextBox Holder 1-->
+    <style name="TextBox.Holder1" parent="layout_m_w">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:layout_margin">5dp</item>-->
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--TextBox Holder 2-->
+    <style name="TextBox.Holder2" parent="layout_f_w">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">5dp</item>
+    </style>
 </resources>

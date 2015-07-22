@@ -26,6 +26,9 @@ public class ViewPagerStyle1Activity extends FragmentActivity {
 	 _mViewPager.setCurrentItem(0);
     }
     private void setTab(){
+		//Initial State
+		findViewById(R.id.first_text).setActivated(true); //Added
+		findViewById(R.id.textView1).setActivated(true); //Added
 			_mViewPager.setOnPageChangeListener(new OnPageChangeListener(){
 			    		
 						@Override
@@ -36,14 +39,26 @@ public class ViewPagerStyle1Activity extends FragmentActivity {
 						public void onPageSelected(int position) {
 							// TODO Auto-generated method stub
 							switch(position){
-							case 0:
-								findViewById(R.id.first_tab).setVisibility(View.VISIBLE);
-								findViewById(R.id.second_tab).setVisibility(View.INVISIBLE);
-								break;
+								case 0:
+									//findViewById(R.id.first_tab).setVisibility(View.VISIBLE);
+									//findViewById(R.id.first_text).setActivated(true); //Added
+									findViewById(R.id.first_text).setActivated(true); //Added
+									findViewById(R.id.textView1).setActivated(true); //Added
+									//findViewById(R.id.second_tab).setVisibility(View.INVISIBLE);
+									//findViewById(R.id.second_tab).setActivated(false); //Added
+									findViewById(R.id.second_text).setActivated(false); //Added
+									findViewById(R.id.textView2).setActivated(false); //Added
+									break;
 								
 							case 1:
-								findViewById(R.id.first_tab).setVisibility(View.INVISIBLE);
-								findViewById(R.id.second_tab).setVisibility(View.VISIBLE);
+								//findViewById(R.id.first_tab).setVisibility(View.INVISIBLE);
+								//findViewById(R.id.first_tab).setActivated(false); //Added
+								findViewById(R.id.first_text).setActivated(false); //Added
+								findViewById(R.id.textView1).setActivated(false); //Added
+								//findViewById(R.id.second_tab).setVisibility(View.VISIBLE);
+								//findViewById(R.id.second_tab).setActivated(true); //Added
+								findViewById(R.id.second_text).setActivated(true); //Added
+								findViewById(R.id.textView2).setActivated(true);  //Added
 								break;
 							}
 						}

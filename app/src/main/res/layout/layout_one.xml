@@ -134,11 +134,7 @@
                 <!-- ListRow Left side Thumbnail image -->
                 <LinearLayout
                     android:id="@+id/thumbnail_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="5dip"
-                    android:padding="3dip" >
+                    style="@style/ImageHolder" >
                     <ImageView
                         android:id="@+id/list_image_name"
                         android:contentDescription="@string/app_name"
@@ -151,20 +147,8 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/list_image_name"
-                    android:layout_marginLeft="75dip"
-                    android:gravity="left"
-                    android:background="#FFFFFF"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom ="10dip"
-                    android:textColor="#d52736"
-                    android:text=""
-                    android:hint="Name"
-                    android:textColorHint="#d52736"
-                    android:textSize="20dip"
-                    android:typeface="sans" />
+                    style="@style/TextBox"
+                    android:hint="Name" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -186,11 +170,7 @@
                 <!-- ListRow Left side Thumbnail image -->
                 <LinearLayout
                     android:id="@+id/thumbnail_father_husband_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="5dip"
-                    android:padding="3dip" >
+                    style="@style/ImageHolder" >
                     <ImageView
                         android:id="@+id/list_image_father_husband_name"
                         android:contentDescription="@string/app_name"
@@ -203,20 +183,8 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_father_husband_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/list_father_husband_name"
-                    android:layout_marginLeft="75dip"
-                    android:gravity="left"
-                    android:background="#FFFFFF"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom ="10dip"
-                    android:textColor="#d52736"
-                    android:text=""
-                    android:hint="Father/Husband Name"
-                    android:textColorHint="#d52736"
-                    android:textSize="20dip"
-                    android:typeface="sans" />
+                    style="@style/TextBox"
+                    android:hint="Father/Husband Name" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -239,11 +207,7 @@
                 <!-- ListRow Left side Thumbnail image -->
                 <LinearLayout
                     android:id="@+id/thumbnail_pincode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="5dip"
-                    android:padding="3dip" >
+                    style="@style/ImageHolder" >
                     <ImageView
                         android:id="@+id/list_image_pincode"
                         android:contentDescription="@string/app_name"
@@ -256,21 +220,9 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_pincode"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/list_pincode"
-                    android:layout_marginLeft="75dip"
-                    android:gravity="left"
-                    android:background="#FFFFFF"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom ="10dip"
-                    android:inputType="number"
-                    android:textColor="#d52736"
-                    android:text=""
-                    android:hint="Pincode"
-                    android:textColorHint="#d52736"
-                    android:textSize="20dip"
-                    android:typeface="sans" />
+                    style="@style/TextBox"
+                    android:maxLength="6"
+                    android:hint="Pincode" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -286,20 +238,11 @@
         android:gravity="center|center_horizontal|center_vertical"
         android:layout_weight="5" >
 
-        <TextView android:layout_width="wrap_content"
-            android:background="@mipmap/footer_aadhaar"
-
-            android:layout_gravity="left|center_horizontal|center_vertical"
-            android:layout_height="wrap_content"></TextView>
+        <TextView style="@style/Footer"/>
 
         <Button
             android:id="@+id/button_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:textStyle="bold"
-            android:textColor="#fab60f"
-            android:background="#d52736"
+            style="@style/Button.Search"
             android:text="Search"></Button>
 
 

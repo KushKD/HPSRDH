@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!--Tab Not Selected-->
+        <item android:state_activated="false"  android:color="#FFFFFF"/>
+        <!--Tab Selected-->
+        <item android:state_activated="true" android:color="#FAB60F" />
+        <!--Tab Pressed
+        <item android:state_pressed="true" android:drawable="@android:color/transparent" />-->
+
+
+</selector>
