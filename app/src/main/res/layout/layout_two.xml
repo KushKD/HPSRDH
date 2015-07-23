@@ -33,11 +33,7 @@
                 <!-- ListRow Left side Thumbnail image -->
                 <LinearLayout
                     android:id="@+id/thumbnail_search_by_uid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="5dip"
-                    android:padding="3dip" >
+                    style="@style/ImageHolder" >
                     <ImageView
                         android:id="@+id/list_image_search_by_uid"
                         android:contentDescription="@string/app_name"
@@ -50,20 +46,10 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_search_by_uid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/list_image_search_by_uid"
-                    android:layout_marginLeft="60dip"
-                    android:gravity="center"
-                    android:background="#FFFFFF"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom ="10dip"
-                    android:textColor="#d52736"
-                    android:text=""
-                    android:hint="Search By UID"
-                    android:textColorHint="#d52736"
-                    android:textSize="20dip"
-                    android:typeface="sans" />
+                    style="@style/TextBox"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:hint="Search By UID" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -109,11 +95,7 @@
                 <!-- ListRow Left side Thumbnail image -->
                 <LinearLayout
                     android:id="@+id/thumbnail_search_by_phone_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginRight="5dip"
-                    android:padding="3dip" >
+                    style="@style/ImageHolder" >
                     <ImageView
                         android:id="@+id/list_image_search_by_phone_number"
                         android:contentDescription="@string/app_name"
@@ -126,20 +108,10 @@
                 <!-- City -->
                 <EditText
                     android:id="@+id/edit_text_search_by_phone_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/list_image_search_by_phone_number"
-                    android:layout_marginLeft="60dip"
-                    android:gravity="center"
-                    android:background="#FFFFFF"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom ="10dip"
-                    android:textColor="#d52736"
-                    android:text=""
-                    android:hint="Search By Phone Number"
-                    android:textColorHint="#d52736"
-                    android:textSize="20dip"
-                    android:typeface="sans" />
+                    style="@style/TextBox"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:hint="Search By Phone Number" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -155,19 +127,12 @@
         android:gravity="center|center_horizontal|center_vertical"
         android:layout_weight="5" >
 
-        <TextView android:layout_width="wrap_content"
-            android:background="@mipmap/footer_aadhaar"
-            android:layout_gravity="left|center_horizontal|center_vertical"
-            android:layout_height="wrap_content"></TextView>
+        <TextView style="@style/Footer"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:textStyle="bold"
-            android:textColor="#fab60f"
-            android:background="#d52736"
-            android:text="Search"></Button>
+            android:id="@+id/searchButton"
+            style="@style/Button.Search"
+            android:text="Search"/>
 
     </LinearLayout>
 

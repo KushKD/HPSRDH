@@ -6,4 +6,12 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_in">SignIn</string>
     <string name="title_activity_log_out">LogOut</string>
+
+    <!--Sign In-->
+    <string name="login_start">Login to Your Account</string>
+
+    <string name="logn_prompt">Please Enter Your Username and Password</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>
