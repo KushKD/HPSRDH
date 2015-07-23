@@ -61,6 +61,7 @@ public class LayoutTwo extends Fragment {
 			//Encrypt UID Service
 			String Crypt_UID = ED.Encrypt_String(UID_Service);
 
+
 		}else{
 
 			Toast.makeText(getActivity(),"Aadhar ID cannto be empty",Toast.LENGTH_LONG).show();
