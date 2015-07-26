@@ -3,8 +3,10 @@ package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ public class LayoutOne extends Fragment {
 	TextView date_of_birth;
 	Spinner district;
 	Button SearchService;
+	private static final String url_SearchService = "http://10.241.13.65/aadhaar/api/Search?" ;
 
 	// variables to store the selected date and time
 	private int mSelectedYear;
@@ -110,32 +113,36 @@ public class LayoutOne extends Fragment {
 
 		if(District_Service.length()!=0 && District_Service!=null){
 			//Encrypt District
-			String District_Crypt_service = ED.Encrypt_String(District_Service);
+			//String District_Crypt_service = ED.Encrypt_String(District_Service);
 
 			if (DOB_Service.length()!=0 && DOB_Service!= null){
 				//Encrypt Dob
-				String DOB_Crypt_Service = ED.Encrypt_String(DOB_Service);
+				//String DOB_Crypt_Service = ED.Encrypt_String(DOB_Service);
 
 				if(Name_Service.length()!= 0 && Name_Service!= null){
 					//Encrypt Name
-					String Name_Crypt_Service = ED.Encrypt_String(Name_Service);
+					//String Name_Crypt_Service = ED.Encrypt_String(Name_Service);
 
 					if(FHName_Service.length()!= 0 && FHName_Service!= null){
 						//Encrypt Fathers name or Husband name
-						String FH_Crypt_Service = ED.Encrypt_String(FHName_Service);
+						//String FH_Crypt_Service = ED.Encrypt_String(FHName_Service);
 
 						if(PinCode_Service.length()!= 0 && PinCode_Service!= null){
 							//Encrypt Pin Code
-							String PinCode_Crypt_Service = ED.Encrypt_String(PinCode_Service);
+							//String PinCode_Crypt_Service = ED.Encrypt_String(PinCode_Service);
 
 							//Start Async Task For Four Parameters
-							Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service +"==="+ PinCode_Crypt_Service,Toast.LENGTH_LONG).show();
+							//Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service +"==="+ PinCode_Crypt_Service,Toast.LENGTH_LONG).show();
 							Toast.makeText(getActivity(),"Async Task For Five Parameters Started",Toast.LENGTH_LONG).show();
+
+							FiveParameters_Async asy_five = new FiveParameters_Async();
+							asy_five.execute(District_Service ,DOB_Service, Name_Service, FHName_Service,PinCode_Service);
 						}else{
 
 							Toast.makeText(getActivity(),"Async Task For Four Parameters Started",Toast.LENGTH_LONG).show();
-							Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service ,Toast.LENGTH_LONG).show();
-
+							//Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service ,Toast.LENGTH_LONG).show();
+							FourParameters_Async asy_four = new FourParameters_Async();
+							asy_four.execute(District_Service,Name_Service,FHName_Service,DOB_Service);
 							//Start Async Task for Five Parameters
 						}
 					}else{
@@ -171,5 +178,103 @@ public class LayoutOne extends Fragment {
 		String month = ((mSelectedMonth+1) > 9) ? ""+(mSelectedMonth+1): "0"+(mSelectedMonth+1) ;
 		String day = ((mSelectedDay) < 10) ? "0"+mSelectedDay: ""+mSelectedDay ;
 		date_of_birth.setText(day + "/" + month + "/" + mSelectedYear);
+	}
+
+
+	class FiveParameters_Async extends AsyncTask<String,String,String>{
+
+		String District_S = null;
+		String Dob_S = null;
+		String Name_S = null;
+		String FHNAme_S= null;
+		String Pincode_S = null;
+		String url = null;
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+
+			District_S = params[0];
+			Dob_S = params[1];
+			Name_S = params[2];
+			FHNAme_S = params[3];
+			Pincode_S = params[4];
+
+			StringBuilder sb_search = new StringBuilder();
+			sb_search.append(url_SearchService);
+
+			//String content = HttpManager.getData(District_S,Dob_S,Name_S,FHNAme_S, Pincode_S );
+			String content = sb_search.toString();
+
+
+			return content;
+		}
+
+		@Override
+		protected void onPostExecute(String s) {
+			super.onPostExecute(s);
+
+			Toast.makeText(getActivity(),s,Toast.LENGTH_LONG).show();
+		}
+	}
+
+
+	/**
+	 * Four Parameters
+	 */
+
+	class FourParameters_Async extends AsyncTask<String,String,String>{
+
+		String District_s4 = null;
+		String Dob_S4 = null;
+		String Name_S4 = null;
+		String FHNAme_S4= null;
+		String Pincode_S4 = null;
+		String url = null;
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+
+			District_s4 = params[0];
+			Name_S4 = params[1];
+			FHNAme_S4 = params[2];
+			Dob_S4 = params[3];
+
+			StringBuilder sb_search = new StringBuilder();
+			sb_search.append(url_SearchService);
+			sb_search.append("District="+ District_s4 + "&");
+			sb_search.append("Name="+ Name_S4 + "&");
+			sb_search.append("FName="+ FHNAme_S4 + "&");
+			sb_search.append("DOB="+ Dob_S4 );
+
+			url = sb_search.toString();
+
+			String content = HttpManager.getData(url);
+
+			//Json Parsing Goes Here
+
+
+
+			return content;
+		}
+
+		@Override
+		protected void onPostExecute(String s) {
+			super.onPostExecute(s);
+
+			Log.d("######",s);
+			Toast.makeText(getActivity(),s,Toast.LENGTH_LONG).show();
+
+			System.out.print(s);
+		}
 	}
 }
