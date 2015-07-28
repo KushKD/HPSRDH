@@ -7,7 +7,18 @@ import java.io.Serializable;
  */
 public class UserPojo implements Serializable {
 
-    private String EmailID_User;
+
+    private String VTC_User;
+
+    public String getEnrollID_User() {
+        return EnrollID_User;
+    }
+
+    public void setEnrollID_User(String enrollID_User) {
+        EnrollID_User = enrollID_User;
+    }
+
+    private String EnrollID_User;
     private String Aadhaar_User;
     private String Resident_Name_user;
     private String DOB_User;
@@ -128,13 +139,7 @@ public class UserPojo implements Serializable {
         Address_Street_User = address_Street_User;
     }
 
-    public String getEmailID_User() {
-        return EmailID_User;
-    }
 
-    public void setEmailID_User(String emailID_User) {
-        EmailID_User = emailID_User;
-    }
 
     public String getAadhaar_User() {
         return Aadhaar_User;
@@ -153,6 +158,14 @@ public class UserPojo implements Serializable {
     }
 
 
+
+    public String getVTC_User() {
+        return VTC_User;
+    }
+
+    public void setVTC_User(String VTC_User) {
+        this.VTC_User = VTC_User;
+    }
 
 
 }

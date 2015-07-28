@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    android.permission.ACCESS_NETWORK_STATE
 
     <application
         android:allowBackup="true"
@@ -39,7 +41,11 @@
         <activity
             android:name=".LogOut"
             android:label="@string/title_activity_log_out"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance" >
+        </activity>
+        <activity
+            android:name=".UserList"
+            android:label="@string/title_activity_user_list" >
         </activity>
     </application>
 

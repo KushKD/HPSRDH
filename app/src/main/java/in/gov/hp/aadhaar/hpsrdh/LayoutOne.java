@@ -3,6 +3,7 @@ package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -141,9 +142,18 @@ public class LayoutOne extends Fragment {
 
 							Toast.makeText(getActivity(),"Async Task For Four Parameters Started",Toast.LENGTH_LONG).show();
 							//Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service ,Toast.LENGTH_LONG).show();
-							FourParameters_Async asy_four = new FourParameters_Async();
-							asy_four.execute(District_Service,Name_Service,FHName_Service,DOB_Service);
+							//FourParameters_Async asy_four = new FourParameters_Async();
+							//asy_four.execute(District_Service,Name_Service,FHName_Service,DOB_Service);
 							//Start Async Task for Five Parameters
+
+							//Start New Activity
+							Intent i = new Intent(getActivity() , UserList.class);
+							i.putExtra("District", District_Service);
+							i.putExtra("Name", Name_Service);
+							i.putExtra("FHName", FHName_Service);
+							i.putExtra("Dob", DOB_Service);
+							startActivity(i);
+
 						}
 					}else{
 						Toast.makeText(getActivity(), "Please enter Your Father's / Husband's Name",Toast.LENGTH_LONG).show();
@@ -223,58 +233,5 @@ public class LayoutOne extends Fragment {
 	}
 
 
-	/**
-	 * Four Parameters
-	 */
 
-	class FourParameters_Async extends AsyncTask<String,String,String>{
-
-		String District_s4 = null;
-		String Dob_S4 = null;
-		String Name_S4 = null;
-		String FHNAme_S4= null;
-		String Pincode_S4 = null;
-		String url = null;
-
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-		}
-
-		@Override
-		protected String doInBackground(String... params) {
-
-			District_s4 = params[0];
-			Name_S4 = params[1];
-			FHNAme_S4 = params[2];
-			Dob_S4 = params[3];
-
-			StringBuilder sb_search = new StringBuilder();
-			sb_search.append(url_SearchService);
-			sb_search.append("District="+ District_s4 + "&");
-			sb_search.append("Name="+ Name_S4 + "&");
-			sb_search.append("FName="+ FHNAme_S4 + "&");
-			sb_search.append("DOB="+ Dob_S4 );
-
-			url = sb_search.toString();
-
-			String content = HttpManager.getData(url);
-
-			//Json Parsing Goes Here
-
-
-
-			return content;
-		}
-
-		@Override
-		protected void onPostExecute(String s) {
-			super.onPostExecute(s);
-
-			Log.d("######",s);
-			Toast.makeText(getActivity(),s,Toast.LENGTH_LONG).show();
-
-			System.out.print(s);
-		}
-	}
 }
