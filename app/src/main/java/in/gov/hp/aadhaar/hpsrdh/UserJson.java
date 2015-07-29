@@ -61,7 +61,6 @@ public class UserJson {
                 user.setAddress_Street_User(obj.getString("Addr Street"));
                 user.setAddress_Landmark_User(obj.getString("Addr Landmark"));
                 user.setAddress_Locality_User(obj.getString("Addr Locality"));
-
                 user.setVTC_User(obj.getString("Addr VTC"));
                 user.setDistrict_User(obj.getString("Addr District"));
                 user.setState_Name_User(obj.getString("addr_state_name"));

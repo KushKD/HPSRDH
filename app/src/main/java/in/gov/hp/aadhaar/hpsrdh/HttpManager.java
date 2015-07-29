@@ -15,6 +15,7 @@ public class HttpManager {
     public static String getData(String uri) {
 
         BufferedReader reader = null;
+        System.out.print("====="+uri);
 
         try {
             URL url = new URL(uri);

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,8 +135,15 @@ public class LayoutOne extends Fragment {
 							//Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service +"==="+ PinCode_Crypt_Service,Toast.LENGTH_LONG).show();
 							Toast.makeText(getActivity(),"Async Task For Five Parameters Started",Toast.LENGTH_LONG).show();
 
-							FiveParameters_Async asy_five = new FiveParameters_Async();
-							asy_five.execute(District_Service ,DOB_Service, Name_Service, FHName_Service,PinCode_Service);
+						//	FiveParameters_Async asy_five = new FiveParameters_Async();
+						//	asy_five.execute(District_Service ,DOB_Service, Name_Service, FHName_Service,PinCode_Service);
+							Intent i = new Intent(getActivity() , UserListFive.class);
+							i.putExtra("District", District_Service);
+							i.putExtra("Name", Name_Service);
+							i.putExtra("FHName", FHName_Service);
+							i.putExtra("Dob", DOB_Service);
+							i.putExtra("Pincode",PinCode_Service);
+							startActivity(i);
 						}else{
 
 							Toast.makeText(getActivity(),"Async Task For Four Parameters Started",Toast.LENGTH_LONG).show();
@@ -147,7 +153,7 @@ public class LayoutOne extends Fragment {
 							//Start Async Task for Five Parameters
 
 							//Start New Activity
-							Intent i = new Intent(getActivity() , UserList.class);
+							Intent i = new Intent(getActivity() , UserListFour.class);
 							i.putExtra("District", District_Service);
 							i.putExtra("Name", Name_Service);
 							i.putExtra("FHName", FHName_Service);

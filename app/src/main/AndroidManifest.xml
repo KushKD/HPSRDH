@@ -44,7 +44,11 @@
             android:launchMode="singleInstance" >
         </activity>
         <activity
-            android:name=".UserList"
+            android:name=".UserListFour"
+            android:label="@string/title_activity_user_list" >
+        </activity>
+        <activity
+            android:name=".UserListFive"
             android:label="@string/title_activity_user_list" >
         </activity>
     </application>

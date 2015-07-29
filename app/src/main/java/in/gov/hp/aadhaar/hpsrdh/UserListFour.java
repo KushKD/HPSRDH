@@ -6,11 +6,8 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -20,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UserList extends Activity {
+public class UserListFour extends Activity {
 
     String District_Service = null;
     String Name_Service = null;
@@ -150,7 +147,7 @@ public class UserList extends Activity {
             super.onPostExecute(result);
 
             Log.d("######", result);
-            Toast.makeText(UserList.this,result,Toast.LENGTH_LONG).show();
+            Toast.makeText(UserListFour.this,result,Toast.LENGTH_LONG).show();
 
             userlist = UserJson.parseFeed(result);
             updateDisplay();
