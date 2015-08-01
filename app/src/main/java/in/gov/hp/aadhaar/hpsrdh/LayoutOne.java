@@ -25,7 +25,7 @@ public class LayoutOne extends Fragment {
 	TextView date_of_birth;
 	Spinner district;
 	Button SearchService;
-	private static final String url_SearchService = "http://10.241.13.65/aadhaar/api/Search?" ;
+	//private static final String url_SearchService = ;  //not working
 
 	// variables to store the selected date and time
 	private int mSelectedYear;

@@ -33,7 +33,7 @@ public class UserListFive extends Activity {
 
     ListView listv;
     Context context;
-    private static final String url_SearchService = "http://10.241.13.65/aadhaar/api/Search?" ;
+  //  private static final String url_SearchService =  not working
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
