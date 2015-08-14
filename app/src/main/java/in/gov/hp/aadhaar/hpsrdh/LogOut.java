@@ -17,7 +17,7 @@ public class LogOut extends Activity {
     EditText et;
     Button b;
     String user = null;
-   // private static final String url_loginService = ;  not working
+    private static final String url_loginService = "";  //not working
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

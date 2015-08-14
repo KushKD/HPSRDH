@@ -21,7 +21,7 @@ public class SignIn extends Activity {
 
     Button login;
     EditText username , password;
-  //  private static final String url_loginService = not working
+    private static final String url_loginService =""; // not working
     public String IMIE_Number ;
 
 

@@ -30,7 +30,7 @@ public class UserListFour extends Activity {
 
     ListView listv;
     Context context;
-   // private static final String url_SearchService =   not woeking
+    private static final String url_SearchService = "" ;// not woeking
 
 
     @Override
