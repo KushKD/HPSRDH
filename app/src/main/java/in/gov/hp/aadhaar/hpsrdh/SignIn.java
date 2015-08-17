@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 
 public class SignIn extends Activity {
 
@@ -79,7 +81,7 @@ public class SignIn extends Activity {
 
 
 
-  protected class logIn extends AsyncTask<String,String,String>{
+  protected class logIn extends AsyncTask<String,JSONObject,Boolean>{
 
       private ProgressDialog dialog;
       Boolean Server_value = false;
@@ -94,21 +96,23 @@ public class SignIn extends Activity {
       }
 
       @Override
-      protected String doInBackground(String... params) {
+      protected Boolean doInBackground(String... params) {
 
+          RestAPI HPSRDH_api = new RestAPI();
           String username_service =  params[0];
           String password_service = params[1];
           String imei_service = params[2];
           String url = null;
+          boolean userAuth = false;
 
           /*
             Encryption goes here
            */
-          EncryptData crypt = new EncryptData();
+        /*  EncryptData crypt = new EncryptData();
           String crypt_username = crypt.Encrypt_String(username_service);
-          String crypt_password = crypt.Encrypt_String(password_service);
+          String crypt_password = crypt.Encrypt_String(password_service);*/
 
-          StringBuilder sb = new StringBuilder();
+         /* StringBuilder sb = new StringBuilder();
           sb.append(url_loginService);
           sb.append("/api/UserLogin?username=");sb.append(crypt_username);
           sb.append("&password=");sb.append(crypt_password);
@@ -122,18 +126,45 @@ public class SignIn extends Activity {
           // Now call the Service
 
          // System.out.print("Here is the ... "+result);myStringBuilder.delete(0, myStringBuilder.length());
-          sb.delete(0, sb.length());
+          sb.delete(0, sb.length());*/
 
-            return  result;
+          // Call the User Authentication Method in API
+          try {
+              JSONObject jsonObj = HPSRDH_api.UserAuthentication(username_service, password_service);
+              //Parse the JSON Object to boolean
+              JSONParser_New parser = new JSONParser_New();
+              userAuth = parser.parseUserAuth(jsonObj);
+              Log.d("Boolean Value is:" , Boolean.toString(userAuth));
+             // userName=params[0];
+          } catch (Exception e) {
+              Log.d("AsyncLogin", e.getMessage());
+          }
+
+          return userAuth;
       }
 
       @Override
-      protected void onPostExecute(String s) {
-          super.onPostExecute(s);
+      protected void onPostExecute(Boolean result) {
+          super.onPostExecute(result);
 
           this.dialog.dismiss();
 
-         // System.out.print("Here is the ... two..."+s);
+          //Check user validity
+          if (result) {
+              Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
+              //i.putExtra("username",userName);
+              startActivity(i_2);
+              SignIn.this.finish();
+          }
+          else
+          {
+              Toast.makeText(getApplicationContext(), "Not valid username/password ",Toast.LENGTH_SHORT).show();
+              Intent i_3 = new Intent(SignIn.this, LogOut.class);
+              startActivity(i_3);
+              SignIn.this.finish();
+          }
+
+        /* // System.out.print("Here is the ... two..."+s);
           String value_server  = s;
          // System.out.print("Here is the ... three ..."+value_server);
           if(value_server.trim().equalsIgnoreCase("true")) {
@@ -147,7 +178,7 @@ public class SignIn extends Activity {
               startActivity(i_3);
               SignIn.this.finish();
 
-          }
+          }*/
       }
   }
 
