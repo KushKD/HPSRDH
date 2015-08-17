@@ -23,7 +23,7 @@ public class SignIn extends Activity {
 
     Button login;
     EditText username , password;
-    private static final String url_loginService =""; // not working
+    private static final String url_loginService =" http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/login/";
     public String IMIE_Number ;
 
 
@@ -81,7 +81,7 @@ public class SignIn extends Activity {
 
 
 
-  protected class logIn extends AsyncTask<String,JSONObject,Boolean>{
+  protected class logIn extends AsyncTask<String,String,String>{
 
       private ProgressDialog dialog;
       Boolean Server_value = false;
@@ -96,61 +96,53 @@ public class SignIn extends Activity {
       }
 
       @Override
-      protected Boolean doInBackground(String... params) {
+      protected String doInBackground(String... params) {
 
-          RestAPI HPSRDH_api = new RestAPI();
+
           String username_service =  params[0];
           String password_service = params[1];
           String imei_service = params[2];
           String url = null;
-          boolean userAuth = false;
+          String userAuth = "";
 
           /*
             Encryption goes here
            */
-        /*  EncryptData crypt = new EncryptData();
+          EncryptData crypt = new EncryptData();
           String crypt_username = crypt.Encrypt_String(username_service);
-          String crypt_password = crypt.Encrypt_String(password_service);*/
+          String crypt_password = crypt.Encrypt_String(password_service);
 
-         /* StringBuilder sb = new StringBuilder();
+          StringBuilder sb = new StringBuilder();
           sb.append(url_loginService);
-          sb.append("/api/UserLogin?username=");sb.append(crypt_username);
-          sb.append("&password=");sb.append(crypt_password);
-          sb.append("&imei=");sb.append(imei_service);
+          sb.append(crypt_username);sb.append("/");
+          sb.append(crypt_password);sb.append("/");
+          sb.append("0");
 
          url = sb.toString();
          Log.d("Service is" , url);
 
           JSONParser jParser = new JSONParser();
-         String result  = jParser.getDataRest(url);
+        // String result  = jParser.getDataRest(url);
+          userAuth = jParser.checkLogin(url);
+
           // Now call the Service
 
          // System.out.print("Here is the ... "+result);myStringBuilder.delete(0, myStringBuilder.length());
-          sb.delete(0, sb.length());*/
+          sb.delete(0, sb.length());
 
-          // Call the User Authentication Method in API
-          try {
-              JSONObject jsonObj = HPSRDH_api.UserAuthentication(username_service, password_service);
-              //Parse the JSON Object to boolean
-              JSONParser_New parser = new JSONParser_New();
-              userAuth = parser.parseUserAuth(jsonObj);
-              Log.d("Boolean Value is:" , Boolean.toString(userAuth));
-             // userName=params[0];
-          } catch (Exception e) {
-              Log.d("AsyncLogin", e.getMessage());
-          }
 
-          return userAuth;
+
+          return userAuth ;
       }
 
       @Override
-      protected void onPostExecute(Boolean result) {
+      protected void onPostExecute(String result) {
           super.onPostExecute(result);
 
           this.dialog.dismiss();
 
           //Check user validity
-          if (result) {
+         /* if (result) {
               Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
               //i.putExtra("username",userName);
               startActivity(i_2);
@@ -162,7 +154,7 @@ public class SignIn extends Activity {
               Intent i_3 = new Intent(SignIn.this, LogOut.class);
               startActivity(i_3);
               SignIn.this.finish();
-          }
+          }*/
 
         /* // System.out.print("Here is the ... two..."+s);
           String value_server  = s;
