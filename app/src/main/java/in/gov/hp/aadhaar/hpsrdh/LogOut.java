@@ -12,12 +12,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 public class LogOut extends Activity {
 
     EditText et;
     Button b;
     String user = null;
-    private static final String url_loginService = "";  //not working
+    private static final String url_loginService = "http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/logout/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +31,11 @@ public class LogOut extends Activity {
         et = (EditText)findViewById(R.id.et_logout);
         b = (Button)findViewById(R.id.logoutbutton);
 
-        System.out.print("We are Here ....");
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(),"Button is Working" , Toast.LENGTH_LONG).show();
             user = et.getText().toString().trim();
 
                 if(user.length()!=0 && user!= null) {
@@ -52,30 +54,30 @@ public class LogOut extends Activity {
     }
 
 
-    class Logout extends AsyncTask<String,String,String>{
+    class Logout extends AsyncTask<String,String,Boolean>{
 
 
         String url = null;
         private ProgressDialog dialog;
+        Boolean Server_value= false;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             dialog = new ProgressDialog(LogOut.this);
-            this.dialog.setMessage("Please wait");
+            this.dialog.setMessage("Please wait....");
             this.dialog.show();
         }
 
         @Override
-        protected String doInBackground(String... params) {
+        protected Boolean doInBackground(String... params) {
             String UserID = params[0];
 
             EncryptData EC  = new EncryptData();
             String Encrypted_UserID = EC.Encrypt_String(UserID);
 
             StringBuilder sb = new StringBuilder();
-            sb.append(url_loginService);
-            sb.append("/api/UserLogin?username=");sb.append(Encrypted_UserID);
+            sb.append(url_loginService);sb.append(Encrypted_UserID);
 
 
             url = sb.toString();
@@ -84,28 +86,45 @@ public class LogOut extends Activity {
 
             JSONParser jParser = new JSONParser();
             String result  = jParser.LogOut(url);
-
+            System.out.print("::::::"+result);
             sb.delete(0, sb.length());
+            Object json = null;
+            try {
+                json = new JSONTokener(result).nextValue();
 
-            return  result;
+                if (json instanceof JSONObject){
+
+                    Log.d("Json ", "Object");
+                    JSONObject obj = new JSONObject(result);
+                    Server_value = obj.optBoolean("LogOutUserResult");
+                    Log.d("CheckUserResult===",Boolean.toString(Server_value));
+
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Server_value = false;
+            }
+
+
+            return Server_value ;
         }
 
         @Override
-        protected void onPostExecute(String s) {
+        protected void onPostExecute(Boolean s) {
             super.onPostExecute(s);
 
             this.dialog.dismiss();
 
-            // System.out.print("Here is the ... two..."+s);
-            String value_server  = s;
-            // System.out.print("Here is the ... three ..."+value_server);
-            if(value_server.trim().equalsIgnoreCase("true")) {
+
+
+            if(s) {
                 Intent i_2 = new Intent(LogOut.this, SignIn.class);
                 startActivity(i_2);
                 LogOut.this.finish();
             }else {
                 Toast.makeText(getApplicationContext(), "Something Went Wrong . Please Check Your Network Connectivity . ", Toast.LENGTH_LONG).show();
-                //System.out.print("Here is the ... four ..." + value_server);
+
             }
         }
     }
