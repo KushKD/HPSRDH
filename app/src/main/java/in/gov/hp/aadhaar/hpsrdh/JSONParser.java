@@ -151,12 +151,12 @@ public class JSONParser {
         try {
 
             response = httpclient.execute(new HttpGet(url));
-            System.out.println(response.toString());
+
             StatusLine statusLine = response.getStatusLine();
             if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
                 HttpEntity httpEntity = response.getEntity();
                 is = httpEntity.getContent();
-                System.out.println(is.toString());
+
             } else {
                 response.getEntity().getContent().close();
                 throw new IOException(statusLine.getReasonPhrase());
@@ -178,18 +178,18 @@ public class JSONParser {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
-                //System.out.println("This is the RESPONSE I'm Getting"+line);
+
             }
             is.close();
             varification = sb.toString();
-            System.out.println(varification);
+            System.out.println("varification is" + varification);
 
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
             return "";
         }
 
-        return "";
+        return varification;
     }
 
 

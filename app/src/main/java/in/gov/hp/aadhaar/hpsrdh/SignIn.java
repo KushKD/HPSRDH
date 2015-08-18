@@ -16,14 +16,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 
 public class SignIn extends Activity {
 
     Button login;
     EditText username , password;
-    private static final String url_loginService =" http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/login/";
+    private static final String url_loginService ="http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/login/";
     public String IMIE_Number ;
 
 
@@ -81,7 +83,7 @@ public class SignIn extends Activity {
 
 
 
-  protected class logIn extends AsyncTask<String,String,String>{
+  protected class logIn extends AsyncTask<String,String,Boolean>{
 
       private ProgressDialog dialog;
       Boolean Server_value = false;
@@ -90,13 +92,13 @@ public class SignIn extends Activity {
           super.onPreExecute();
 
            dialog = new ProgressDialog(SignIn.this);
-          this.dialog.setMessage("Please wait");
+          this.dialog.setMessage("Please wait .......");
           this.dialog.show();
 
       }
 
       @Override
-      protected String doInBackground(String... params) {
+      protected Boolean doInBackground(String... params) {
 
 
           String username_service =  params[0];
@@ -105,9 +107,6 @@ public class SignIn extends Activity {
           String url = null;
           String userAuth = "";
 
-          /*
-            Encryption goes here
-           */
           EncryptData crypt = new EncryptData();
           String crypt_username = crypt.Encrypt_String(username_service);
           String crypt_password = crypt.Encrypt_String(password_service);
@@ -119,32 +118,43 @@ public class SignIn extends Activity {
           sb.append("0");
 
          url = sb.toString();
-         Log.d("Service is" , url);
-
           JSONParser jParser = new JSONParser();
-        // String result  = jParser.getDataRest(url);
           userAuth = jParser.checkLogin(url);
-
-          // Now call the Service
-
-         // System.out.print("Here is the ... "+result);myStringBuilder.delete(0, myStringBuilder.length());
           sb.delete(0, sb.length());
+          System.out.print("userAuth is" + userAuth);
 
 
+          Object json = null;
+          try {
+              json = new JSONTokener(userAuth).nextValue();
 
-          return userAuth ;
+              if (json instanceof JSONObject){
+
+                  Log.d("Json ", "Object");
+                  JSONObject obj = new JSONObject(userAuth);
+                  Server_value = obj.optBoolean("CheckUserResult");
+                  Log.d("CheckUserResult===",Boolean.toString(Server_value));
+
+              }
+
+          } catch (JSONException e) {
+              e.printStackTrace();
+              Server_value = false;
+          }
+
+
+          return Server_value ;
       }
 
       @Override
-      protected void onPostExecute(String result) {
-          super.onPostExecute(result);
+      protected void onPostExecute(Boolean server_value) {
+          super.onPostExecute(server_value);
 
           this.dialog.dismiss();
 
-          //Check user validity
-         /* if (result) {
+
+          if (server_value) {
               Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
-              //i.putExtra("username",userName);
               startActivity(i_2);
               SignIn.this.finish();
           }
@@ -154,23 +164,9 @@ public class SignIn extends Activity {
               Intent i_3 = new Intent(SignIn.this, LogOut.class);
               startActivity(i_3);
               SignIn.this.finish();
-          }*/
+          }
 
-        /* // System.out.print("Here is the ... two..."+s);
-          String value_server  = s;
-         // System.out.print("Here is the ... three ..."+value_server);
-          if(value_server.trim().equalsIgnoreCase("true")) {
-              Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
-              startActivity(i_2);
-              SignIn.this.finish();
-          }else {
-             // Toast.makeText(getApplicationContext(),"Sorry, You are not a valid User. Please Try again",Toast.LENGTH_LONG).show();
-              //System.out.print("Here is the ... four ..." + value_server);
-              Intent i_3 = new Intent(SignIn.this, LogOut.class);
-              startActivity(i_3);
-              SignIn.this.finish();
 
-          }*/
       }
   }
 
