@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -61,6 +62,20 @@ public class UserListFour extends Activity {
         } else {
             Toast.makeText(this, "Network isn't available", Toast.LENGTH_LONG).show();
         }
+
+        listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                UserPojo userDetails = (UserPojo)	parent.getItemAtPosition(position);
+
+                Intent userSearch = new Intent();
+                userSearch.putExtra("Details", userDetails);
+                userSearch.setClass(UserListFour.this, UserDetailsSearch.class);
+                startActivity(userSearch);
+
+            }
+        });
 
 
 
@@ -146,8 +161,8 @@ public class UserListFour extends Activity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            Log.d("######", result);
-            Toast.makeText(UserListFour.this,result,Toast.LENGTH_LONG).show();
+           // Log.d("######", result);
+            //Toast.makeText(UserListFour.this,result,Toast.LENGTH_LONG).show();
 
             userlist = UserJson2.parseFeed(result);
             updateDisplay();

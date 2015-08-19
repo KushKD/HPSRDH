@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     android.permission.ACCESS_NETWORK_STATE
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -50,6 +49,10 @@
         <activity
             android:name=".UserListFive"
             android:label="@string/title_activity_user_list" >
+        </activity>
+        <activity
+            android:name=".UserDetailsSearch"
+            android:label="@string/title_activity_user_details_search" >
         </activity>
     </application>
 

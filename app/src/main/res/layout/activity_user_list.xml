@@ -4,21 +4,22 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#9C999999"
-        tools:context="com.hanselandpetal.catalog.MainActivity" >
+        tools:context="com.hanselandpetal.catalog.MainActivity"
+        android:orientation="vertical">
 
 
-        <!--
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:scrollbars="vertical"
-            android:textColor="#000000"
-            android:text="" />  -->
+            style="@style/Button"
+            android:text="Searched Results" />
 
         <ListView
             android:id="@+id/list"
@@ -33,5 +34,5 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" />
 
-    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

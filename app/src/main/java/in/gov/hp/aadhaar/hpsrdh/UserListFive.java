@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -64,6 +65,20 @@ public class UserListFive extends Activity {
         } else {
             Toast.makeText(this, "Network isn't available", Toast.LENGTH_LONG).show();
         }
+
+        listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                UserPojo userDetails = (UserPojo)	parent.getItemAtPosition(position);
+
+                Intent userSearch = new Intent();
+                userSearch.putExtra("Details", userDetails);
+                userSearch.setClass(UserListFive.this, UserDetailsSearch.class);
+                startActivity(userSearch);
+
+            }
+        });
     }
 
     protected boolean isOnline() {
@@ -88,6 +103,9 @@ public class UserListFive extends Activity {
         listv.setAdapter(adapter);
 
     }
+
+
+
 
     /**
      * Four Parameters
@@ -150,8 +168,8 @@ public class UserListFive extends Activity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            Log.d("######", result);
-            Toast.makeText(UserListFive.this,result,Toast.LENGTH_LONG).show();
+           // Log.d("######", result);
+           // Toast.makeText(UserListFive.this,result,Toast.LENGTH_LONG).show();
 
             userlist = UserJson.parseFeed(result);
             updateDisplay();
