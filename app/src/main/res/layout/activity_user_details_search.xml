@@ -1,12 +1,509 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="in.gov.hp.aadhaar.hpsrdh.UserDetailsSearch">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rightLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!-- ImageView -->
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="#FFFFFF"
+        android:gravity="left|center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:id="@+id/ImageUser"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/username" />
+        <TextView
+            android:id="@+id/ud_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal|center_vertical"
+            style="@style/TextBox"
+            android:text="Kush Dhawan"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/laydetails"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2"
+        android:background="#FFFFFF" >
+
+        <ScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Enroll ID -->
+            <LinearLayout
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal|left"
+                    style="@style/TextBox"
+                    android:text="Enroll ID"/>
+
+                <TextView
+                    android:id="@+id/ud_enrollid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal|left"
+                    style="@style/TextBox"
+                    android:text=""/>
+                </LinearLayout>
+
+                <!-- Aadhar ID -->
+                <LinearLayout
+                    android:id="@+id/textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Aadhaar ID"/>
+
+                    <TextView
+                        android:id="@+id/ud_aadhaarid"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Resident Name User -->
+                <LinearLayout
+                    android:id="@+id/textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:visibility="gone"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Resident Name"/>
+
+                    <TextView
+                        android:id="@+id/ud_residentname"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Date Of Birth -->
+                <LinearLayout
+                    android:id="@+id/textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Date Of Birth"/>
+
+                    <TextView
+                        android:id="@+id/ud_dateofbirth"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Gender -->
+                <LinearLayout
+                    android:id="@+id/textview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Gender"/>
+
+                    <TextView
+                        android:id="@+id/ud_gender"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Care Off -->
+                <LinearLayout
+                    android:id="@+id/textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Care Off"/>
+
+                    <TextView
+                        android:id="@+id/ud_careoff"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Address Building -->
+                <LinearLayout
+                    android:id="@+id/textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Address Building"/>
+
+                    <TextView
+                        android:id="@+id/ud_addressbuilding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Address Street -->
+                <LinearLayout
+                    android:id="@+id/textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Address Street"/>
+
+                    <TextView
+                        android:id="@+id/ud_street"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Address Landmark -->
+                <LinearLayout
+                    android:id="@+id/textview9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Address Landmark"/>
+
+                    <TextView
+                        android:id="@+id/ud_adresslandmark"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Address Locality -->
+                <LinearLayout
+                    android:id="@+id/textview10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Address Locality"/>
+
+                    <TextView
+                        android:id="@+id/ud_addresslocality"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Address District -->
+                <LinearLayout
+                    android:id="@+id/textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="District"/>
+
+                    <TextView
+                        android:id="@+id/ud_District"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!--  State -->
+                <LinearLayout
+                    android:id="@+id/textview12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="State"/>
+
+                    <TextView
+                        android:id="@+id/ud_state"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- Pincode -->
+                <LinearLayout
+                    android:id="@+id/textview13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Pincode"/>
+
+                    <TextView
+                        android:id="@+id/ud_pincode"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+
+                <!-- 14 Res_Gauardian_User -->
+                <LinearLayout
+                    android:id="@+id/textview14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Res Gauardian"/>
+
+                    <TextView
+                        android:id="@+id/ud_res_gauardian_"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- res_addr_subdistrict_name_User -->
+                <LinearLayout
+                    android:id="@+id/textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Res Sub District Address"/>
+
+                    <TextView
+                        android:id="@+id/ud_res_addr_subdistrict"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- res_addr_po_name_User -->
+                <LinearLayout
+                    android:id="@+id/textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="Res Address Post Office"/>
+
+                    <TextView
+                        android:id="@+id/ud_res_addr_po_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+                <!-- VTC_User -->
+                <LinearLayout
+                    android:id="@+id/textview17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text="VTC User"/>
+
+                    <TextView
+                        android:id="@+id/ud_VTC_User"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        style="@style/TextBox"
+                        android:text=""/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <!-- Button -->
+    <LinearLayout
+        android:id="@+id/lay3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".5"
+        android:gravity="right|center_horizontal|center_vertical"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Button"
+            android:text="  Back  " />
+    </LinearLayout>
+
+
+
+</LinearLayout>
