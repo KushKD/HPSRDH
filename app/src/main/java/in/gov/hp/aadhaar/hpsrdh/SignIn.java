@@ -122,7 +122,7 @@ public class SignIn extends Activity {
           JSONParser jParser = new JSONParser();
           userAuth = jParser.checkLogin(url);
           sb.delete(0, sb.length());
-          System.out.print("userAuth is" + userAuth);
+        //  System.out.print("userAuth is" + userAuth);
 
 
           Object json = null;
@@ -131,10 +131,10 @@ public class SignIn extends Activity {
 
               if (json instanceof JSONObject){
 
-                  Log.d("Json ", "Object");
+                 // Log.d("Json ", "Object");
                   JSONObject obj = new JSONObject(userAuth);
                   Server_value = obj.optBoolean("CheckUserResult");
-                  Log.d("CheckUserResult===",Boolean.toString(Server_value));
+                 // Log.d("CheckUserResult===",Boolean.toString(Server_value));
 
               }
 
@@ -161,7 +161,7 @@ public class SignIn extends Activity {
           }
           else
           {
-              Toast.makeText(getApplicationContext(), "Not valid username/password ",Toast.LENGTH_SHORT).show();
+              Toast.makeText(getApplicationContext(), "Either the username/password is not valid or you are already logged in ",Toast.LENGTH_SHORT).show();
               Intent i_3 = new Intent(SignIn.this, LogOut.class);
               startActivity(i_3);
               SignIn.this.finish();

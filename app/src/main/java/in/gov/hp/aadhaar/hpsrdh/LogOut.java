@@ -39,12 +39,12 @@ public class LogOut extends Activity {
             user = et.getText().toString().trim();
 
                 if(user.length()!=0 && user!= null) {
-                    Toast.makeText(getApplicationContext(), user, Toast.LENGTH_LONG).show();
-                    Toast.makeText(getApplicationContext(), user , Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), user, Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), user , Toast.LENGTH_LONG).show();
                     Logout lo = new Logout();
                      lo.execute(user);
                 }else{
-                    Toast.makeText(getApplicationContext(), "User Name cannot be empty ..", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Username cannot be empty ..", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -65,7 +65,7 @@ public class LogOut extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             dialog = new ProgressDialog(LogOut.this);
-            this.dialog.setMessage("Please wait....");
+            this.dialog.setMessage("Please wait.... ");
             this.dialog.show();
         }
 
@@ -81,7 +81,7 @@ public class LogOut extends Activity {
 
 
             url = sb.toString();
-            Log.d("URL" , sb.toString());
+           // Log.d("URL" , sb.toString());
 
 
             JSONParser jParser = new JSONParser();
@@ -94,10 +94,10 @@ public class LogOut extends Activity {
 
                 if (json instanceof JSONObject){
 
-                    Log.d("Json ", "Object");
+                  //  Log.d("Json ", "Object");
                     JSONObject obj = new JSONObject(result);
                     Server_value = obj.optBoolean("LogOutUserResult");
-                    Log.d("CheckUserResult===",Boolean.toString(Server_value));
+                   // Log.d("CheckUserResult===",Boolean.toString(Server_value));
 
                 }
 

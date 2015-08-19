@@ -1,23 +1,228 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:layout_margin="10dp"
-    tools:context="in.gov.hp.aadhaar.hpsrdh.LogOut"
-    android:orientation="vertical">
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:weightSum="6">
 
-    <EditText
-        android:id="@+id/et_logout"
-        android:hint="Enter Your User ID"
-        android:layout_width="match_parent"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:textSize="22sp"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5" >
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/logoutbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Log Out"/>
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_weight="1" >
 
-</LinearLayout>
+            <!-- Heading -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d52736"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/button_main_header"
+                    android:orientation="horizontal"
+                    android:padding="5dip" >
+                    <!-- ListRow Left side Thumbnail image -->
+                    <LinearLayout
+                        android:id="@+id/thumbnail_header"
+                        style="@style/ImageHolder" >
+                        <ImageView
+                            android:id="@+id/list_image_header"
+                            android:contentDescription="@string/app_name"
+                            android:layout_width="60dip"
+                            android:layout_height="60dip" />
+                    </LinearLayout>
+
+                    <!-- Rightend Arrow -->
+                    <ImageView
+                        android:id="@+id/imageView1_header"
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+                    <!-- City -->
+                    <TextView
+                        android:id="@+id/text_view_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/list_image"
+                        android:layout_marginLeft="15dip"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom ="10dip"
+                        android:textColor="#fab60f"
+                        android:text="@string/logn_prompt_logout"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <!-- Weather Information-->
+                    <!--   <Button
+                           android:id="@+id/buttonSignIn"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_below="@+id/tvCity"
+                           android:layout_alignLeft="@+id/tvCity"
+                           android:paddingTop="5dip"
+                           android:layout_centerHorizontal="true"
+                           android:text="Sign In"
+                           android:textColor="#343434"
+                           android:textSize="15dip" />  -->
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--Username TextBox-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/button_username"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:padding="5dip">
+                    <!-- ListRow Left side Thumbnail image -->
+                    <LinearLayout
+                        android:id="@+id/thumbnail_username"
+                        style="@style/ImageHolder" >
+                        <ImageView
+                            android:id="@+id/list_image_username"
+                            android:layout_width="@dimen/img_size"
+                            android:layout_height="@dimen/img_size"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/username"
+                            />
+                    </LinearLayout>
+                    <!-- Rightend Arrow -->
+
+                    <!-- City -->
+                    <EditText
+                        android:id="@+id/et_logout"
+                        android:hint="Enter Your User ID"
+                        style="@style/TextBox"
+                        />
+
+                    <!-- Weather Information-->
+                    <!--   <Button
+                           android:id="@+id/buttonSignIn"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_below="@+id/tvCity"
+                           android:layout_alignLeft="@+id/tvCity"
+                           android:paddingTop="5dip"
+                           android:layout_centerHorizontal="true"
+                           android:text="Sign In"
+                           android:textColor="#343434"
+                           android:textSize="15dip" />  -->
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:layout_margin="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/button_main_password"
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:padding="5dip"
+                    >
+                    <!-- ListRow Left side Thumbnail image -->
+                    <LinearLayout
+                        android:id="@+id/thumbnail"
+                        style="@style/ImageHolder" >
+                        <ImageView
+                            android:id="@+id/list_image_password"
+                            android:layout_width="@dimen/img_size"
+                            android:layout_height="@dimen/img_size"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/password" />
+                    </LinearLayout>
+                    <!-- Rightend Arrow -->
+
+                    <!-- City -->
+                    <EditText
+                        android:id="@+id/editText_password"
+                        style="@style/TextBox"
+                        android:inputType ="textPassword"
+                        android:hint="@string/password"
+                        />
+
+                    <!-- Weather Information-->
+                    <!--   <Button
+                           android:id="@+id/buttonSignIn"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_below="@+id/tvCity"
+                           android:layout_alignLeft="@+id/tvCity"
+                           android:paddingTop="5dip"
+                           android:layout_centerHorizontal="true"
+                           android:text="Sign In"
+                           android:textColor="#343434"
+                           android:textSize="15dip" />  -->
+                </RelativeLayout>
+
+
+
+                <!-- Button Login -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical|center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <!-- City -->
+                    <Button
+                        android:id="@+id/logoutbutton"
+                        android:text="Log Out"
+                        android:layout_width="100dp"
+                        android:layout_marginTop="5dp"
+                        style="@style/Button" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5" >
+            <TextView style="@style/Footer"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
