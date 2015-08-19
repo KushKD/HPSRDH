@@ -116,17 +116,11 @@ public class UserListFive extends Activity {
         @Override
         protected String doInBackground(String... params) {
 
-            System.out.println("We are Here2");
             District_s5 = params[0];
-            System.out.println("We are Here3");  //District_Service,DOB_Service,Name_Service,FHName_Service,Pincode_service
             Name_S5 = params[1];
-            System.out.println("We are Here4");
             FHNAme_S5 = params[2];
-            System.out.println("We are Here5");
             Dob_S5 = params[3];
-            System.out.println("We are Here6");
             Pincode_S5 = params[4];
-            System.out.println("We are Here7");
 
 
 
@@ -142,7 +136,7 @@ public class UserListFive extends Activity {
 
             url = sb_search.toString();
 
-            System.out.print("=====" + url);
+           // System.out.print("=====" + url);
             String content = HttpManager.getData(url);
 
             //Json Parsing Goes Here

@@ -1,18 +1,19 @@
+
 package in.gov.hp.aadhaar.hpsrdh;
 
 
-import android.util.Log;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-import java.util.ArrayList;
-import java.util.List;
+        import android.util.Log;
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        import org.json.JSONObject;
+        import org.json.JSONTokener;
+        import java.util.ArrayList;
+        import java.util.List;
 
 /**
  * Created by KD on 7/28/2015.
  */
-public class UserJson {
+public class UserJson2 {
 
     public static List<UserPojo> parseFeed(String content) {
 
@@ -33,7 +34,7 @@ public class UserJson {
 
                 JSONObject obj = new JSONObject(content);
 
-                g_Table = obj.optString("GetAllUsers5Result");
+                g_Table = obj.optString("GetAllUsers4Result");
                 Log.d("Table===",g_Table);
 
             }
@@ -75,7 +76,7 @@ public class UserJson {
 
 
 
-             userList.add(user);
+                userList.add(user);
             }
 
             return userList;

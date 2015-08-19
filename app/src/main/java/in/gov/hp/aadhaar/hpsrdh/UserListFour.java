@@ -30,7 +30,7 @@ public class UserListFour extends Activity {
 
     ListView listv;
     Context context;
-    private static final String url_SearchService = "" ;// not woeking
+    private static final String url_SearchService = "http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/searchfour/" ;
 
 
     @Override
@@ -123,13 +123,13 @@ public class UserListFour extends Activity {
             Name_S4 = params[1];
             FHNAme_S4 = params[2];
             Dob_S4 = params[3];
-
+//UriTemplate = "searchfour/{District}/{DOB}/{Name}/{FName}")]
             StringBuilder sb_search = new StringBuilder();
             sb_search.append(url_SearchService);
-            sb_search.append("District="+ District_s4 + "&");
-            sb_search.append("Name="+ Name_S4 + "&");
-            sb_search.append("FName="+ FHNAme_S4 + "&");
-            sb_search.append("DOB="+ Dob_S4 );
+            sb_search.append( District_s4 + "/");
+            sb_search.append(Dob_S4+ "/");
+            sb_search.append(Name_S4  + "/");
+            sb_search.append(FHNAme_S4 );
 
             url = sb_search.toString();
 
@@ -149,7 +149,7 @@ public class UserListFour extends Activity {
             Log.d("######", result);
             Toast.makeText(UserListFour.this,result,Toast.LENGTH_LONG).show();
 
-            userlist = UserJson.parseFeed(result);
+            userlist = UserJson2.parseFeed(result);
             updateDisplay();
 
             tasks.remove(this);
