@@ -193,7 +193,7 @@ public class LayoutOne extends Fragment {
 	private void updateDateUI() {
 		String month = ((mSelectedMonth+1) > 9) ? ""+(mSelectedMonth+1): "0"+(mSelectedMonth+1) ;
 		String day = ((mSelectedDay) < 10) ? "0"+mSelectedDay: ""+mSelectedDay ;
-		date_of_birth.setText(day + "/" + month + "/" + mSelectedYear);
+		date_of_birth.setText(day + "-" + month + "-" + mSelectedYear);
 	}
 
 

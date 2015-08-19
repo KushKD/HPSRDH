@@ -33,7 +33,7 @@ public class UserListFive extends Activity {
 
     ListView listv;
     Context context;
-    private static final String url_SearchService = ""; // not working
+    private static final String url_SearchService = "http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/searchfive/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class UserListFive extends Activity {
 
         if (isOnline()) {
             FiveParameters_Async asy_five = new FiveParameters_Async();
-            asy_five.execute(District_Service,Name_Service,FHName_Service,Pincode_service);
+            asy_five.execute(District_Service,Name_Service,FHName_Service,DOB_Service,Pincode_service );
         } else {
             Toast.makeText(this, "Network isn't available", Toast.LENGTH_LONG).show();
         }
@@ -116,21 +116,27 @@ public class UserListFive extends Activity {
         @Override
         protected String doInBackground(String... params) {
 
+            System.out.println("We are Here2");
             District_s5 = params[0];
+            System.out.println("We are Here3");  //District_Service,DOB_Service,Name_Service,FHName_Service,Pincode_service
             Name_S5 = params[1];
+            System.out.println("We are Here4");
             FHNAme_S5 = params[2];
+            System.out.println("We are Here5");
             Dob_S5 = params[3];
+            System.out.println("We are Here6");
             Pincode_S5 = params[4];
+            System.out.println("We are Here7");
 
 
 
             StringBuilder sb_search = new StringBuilder();
             sb_search.append(url_SearchService);
-            sb_search.append("District="+ District_s5 + "&");
-            sb_search.append("Name="+ Name_S5 + "&");
-            sb_search.append("FName="+ FHNAme_S5 + "&");
-            sb_search.append("DOB="+ Dob_S5 + "&" );
-            sb_search.append("PINCode="+ Pincode_S5);
+            sb_search.append(District_s5+"/");
+            sb_search.append(Name_S5+"/");
+            sb_search.append(Dob_S5+"/");
+            sb_search.append(FHNAme_S5 +"/");
+            sb_search.append(Pincode_S5);
 
 
 

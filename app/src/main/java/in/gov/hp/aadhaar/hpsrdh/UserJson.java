@@ -70,28 +70,6 @@ public class UserJson {
                 user.setRes_addr_po_name_User(obj.getString("res_addr_po_name"));
 
 
-
-
-
-
-
-
-
-
-
-//                user.setFloorEntrance(obj.getString("addr_pincode"));
-//                user.setOrientation(obj.getString("Addr Landmark"));
-//                user.setType_Of_Room(obj.getString("Care of"));
-//                user.setBath_Facility(obj.getString("DOB"));
-
-//                user.setRoom_Condition(obj.getString("Aadhaar"));
-//                user.setBed_Capacity(obj.getString("Addr Street"));
-
-                //Enroll ID res_gauardian_name  res_addr_po_name  Address building
-                //Addr District  Addr Locality  Gender  res_addr_subdistrict_name
-                //Resident Name
-
-
              userList.add(user);
             }
 

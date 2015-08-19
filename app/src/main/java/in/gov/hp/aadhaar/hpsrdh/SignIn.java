@@ -118,6 +118,7 @@ public class SignIn extends Activity {
           sb.append("0");
 
          url = sb.toString();
+          System.out.println(url);
           JSONParser jParser = new JSONParser();
           userAuth = jParser.checkLogin(url);
           sb.delete(0, sb.length());
