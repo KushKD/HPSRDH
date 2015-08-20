@@ -44,7 +44,7 @@ public class UserDetailsSearch extends Activity {
 
         Intent getRoomDetailsIntent = getIntent();
         UserPojo userDetails =  (UserPojo) getRoomDetailsIntent.getSerializableExtra("Details");
-        Toast.makeText(getApplicationContext(),"Got IT",Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(),"Got IT",Toast.LENGTH_LONG).show();
 
          EnrollID_User = (TextView)findViewById(R.id.ud_enrollid);
          Aadhaar_User  = (TextView)findViewById(R.id.ud_aadhaarid);
@@ -70,6 +70,23 @@ public class UserDetailsSearch extends Activity {
          */
 
         EnrollID_User.setText(userDetails.getEnrollID_User());
+        Resident_Name_user.setText(userDetails.getResident_Name_user());
+        Aadhaar_User.setText(userDetails.getAadhaar_User());
+        DOB_User.setText(userDetails.getDOB_User());
+        Gender_User.setText(userDetails.getGender_User());
+        Care_OFF_User.setText(userDetails.getCare_OFF_User());
+        Address_Street_User.setText(userDetails.getAddress_Street_User());
+        Address_Landmark_User.setText(userDetails.getAddress_Landmark_User());
+        Address_Locality_User.setText(userDetails.getAddress_Locality_User());
+        District_User.setText(userDetails.getDistrict_User());
+        State_Name_User.setText(userDetails.getState_Name_User());
+        Address_Pincode_User.setText(userDetails.getAddress_Pincode_User());
+        Res_Gauardian_User.setText(userDetails.getRes_Gauardian_User());
+        res_addr_subdistrict_name_User.setText(userDetails.getRes_addr_subdistrict_name_User());
+        res_addr_po_name_User.setText(userDetails.getRes_addr_po_name_User());
+        VTC_User.setText(userDetails.getVTC_User());
+
+
 
 
 
@@ -84,7 +101,7 @@ public class UserDetailsSearch extends Activity {
         IV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Getting the Image",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),"Getting the Image",Toast.LENGTH_LONG).show();
             }
         });
 

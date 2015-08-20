@@ -49,7 +49,7 @@ public class UserListFive extends Activity {
         DOB_Service = bundle.getString("Dob");
         Pincode_service = bundle.getString("Pincode");
 
-        Toast.makeText(getApplicationContext(), District_Service + Name_Service + FHName_Service + DOB_Service + Pincode_service, Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(), District_Service + Name_Service + FHName_Service + DOB_Service + Pincode_service, Toast.LENGTH_LONG).show();
 
         listv = (ListView) findViewById(R.id.list);
         context = this;

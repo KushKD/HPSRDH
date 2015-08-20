@@ -133,7 +133,7 @@ public class LayoutOne extends Fragment {
 
 							//Start Async Task For Four Parameters
 							//Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service +"==="+ PinCode_Crypt_Service,Toast.LENGTH_LONG).show();
-							Toast.makeText(getActivity(),"Async Task For Five Parameters Started",Toast.LENGTH_LONG).show();
+							//Toast.makeText(getActivity(),"Async Task For Five Parameters Started",Toast.LENGTH_LONG).show();
 
 						//	FiveParameters_Async asy_five = new FiveParameters_Async();
 						//	asy_five.execute(District_Service ,DOB_Service, Name_Service, FHName_Service,PinCode_Service);
@@ -146,7 +146,7 @@ public class LayoutOne extends Fragment {
 							startActivity(i);
 						}else{
 
-							Toast.makeText(getActivity(),"Async Task For Four Parameters Started",Toast.LENGTH_LONG).show();
+							//Toast.makeText(getActivity(),"Async Task For Four Parameters Started",Toast.LENGTH_LONG).show();
 							//Toast.makeText(getActivity(),District_Crypt_service +"==="+ DOB_Crypt_Service +"==="+Name_Crypt_Service +"==="+ FH_Crypt_Service ,Toast.LENGTH_LONG).show();
 							//FourParameters_Async asy_four = new FourParameters_Async();
 							//asy_four.execute(District_Service,Name_Service,FHName_Service,DOB_Service);

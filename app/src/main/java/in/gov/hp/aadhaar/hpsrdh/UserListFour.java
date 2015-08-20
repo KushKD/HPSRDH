@@ -46,7 +46,7 @@ public class UserListFour extends Activity {
         FHName_Service = bundle.getString("FHName");
         DOB_Service = bundle.getString("Dob");
 
-        Toast.makeText(getApplicationContext(),District_Service + Name_Service + FHName_Service + DOB_Service , Toast.LENGTH_LONG ).show();
+        //Toast.makeText(getApplicationContext(),District_Service + Name_Service + FHName_Service + DOB_Service , Toast.LENGTH_LONG ).show();
 
         listv = (ListView) findViewById(R.id.list);
         context = this;

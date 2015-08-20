@@ -184,6 +184,7 @@
                 <EditText
                     android:id="@+id/edit_text_father_husband_name"
                     style="@style/TextBox"
+                    android:gravity="left"
                     android:hint="Father/Husband Name" />
 
             </RelativeLayout>

@@ -89,9 +89,58 @@
 
     </style>
 
+
+
+    <!-- Text Box Style-->
+    <style name="TextBox3" parent="layout_wrap">
+
+        <!--Orientation-->
+       <!-- <item name="android:layout_marginLeft">75dip</item>-->
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:gravity">center</item>
+
+        <!--Text Type-->
+        <item name="android:text"></item>
+        <item name="android:textSize">@dimen/txt_size</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+
+        <!--Colors-->
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#D52736</item>
+        <item name="android:textColorHint">#D52736</item>
+
+    </style>
+
     <style name="colors_button" parent="layout_wrap">
         <item name="android:textColor">#fab60f</item>
         <item name="android:background">#d52736</item>
+    </style>
+
+    <!-- Text Box Style-->
+    <style name="TextBoxDetails" parent="layout_wrap">
+
+        <!--Orientation-->
+       <!-- <item name="android:layout_marginLeft">75dip</item>-->
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:gravity">center</item>
+
+        <!--Text Type-->
+        <item name="android:text"></item>
+        <item name="android:textSize">@dimen/txt_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+
+        <!--Colors-->
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorHint">#D52736</item>
+
     </style>
 
     <!--Button Style-->

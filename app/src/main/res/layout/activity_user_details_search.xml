@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#f2f2f2"
     android:weightSum="3">
 
     <!-- ImageView -->
@@ -13,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:background="#FFFFFF"
+        android:background="#ffffff"
+        android:layout_margin="5dp"
         android:gravity="left|center_vertical|center_horizontal"
         android:orientation="horizontal">
 
@@ -29,15 +31,14 @@
             android:layout_height="wrap_content"
             android:gravity="center|center_horizontal|center_vertical"
             style="@style/TextBox"
-            android:text="Kush Dhawan"/>
+            android:text=""/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/laydetails"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:layout_weight="2"
-        android:background="#FFFFFF" >
+        android:layout_weight="2" >
 
         <ScrollView
             android:id="@+id/mainScrollView"
@@ -63,7 +64,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical|center_horizontal|left"
-                    style="@style/TextBox"
+                    style="@style/TextBox3"
                     android:text="Enroll ID"/>
 
                 <TextView
@@ -71,7 +72,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical|center_horizontal|left"
-                    style="@style/TextBox"
+                    style="@style/TextBoxDetails"
                     android:text=""/>
                 </LinearLayout>
 
@@ -88,7 +89,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Aadhaar ID"/>
 
                     <TextView
@@ -96,7 +97,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -114,7 +115,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Resident Name"/>
 
                     <TextView
@@ -122,7 +123,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -139,7 +140,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Date Of Birth"/>
 
                     <TextView
@@ -147,7 +148,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -164,7 +165,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Gender"/>
 
                     <TextView
@@ -172,7 +173,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -189,7 +190,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Care Off"/>
 
                     <TextView
@@ -197,7 +198,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -214,7 +215,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Address Building"/>
 
                     <TextView
@@ -222,7 +223,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -239,7 +240,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Address Street"/>
 
                     <TextView
@@ -247,7 +248,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -264,7 +265,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Address Landmark"/>
 
                     <TextView
@@ -272,7 +273,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -289,7 +290,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Address Locality"/>
 
                     <TextView
@@ -297,7 +298,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -314,7 +315,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="District"/>
 
                     <TextView
@@ -322,7 +323,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -339,7 +340,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="State"/>
 
                     <TextView
@@ -347,7 +348,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -364,7 +365,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Pincode"/>
 
                     <TextView
@@ -372,7 +373,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -390,7 +391,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Res Gauardian"/>
 
                     <TextView
@@ -398,7 +399,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -415,7 +416,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Res Sub District Address"/>
 
                     <TextView
@@ -423,7 +424,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -440,7 +441,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="Res Address Post Office"/>
 
                     <TextView
@@ -448,7 +449,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -465,7 +466,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBox3"
                         android:text="VTC User"/>
 
                     <TextView
@@ -473,7 +474,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
-                        style="@style/TextBox"
+                        style="@style/TextBoxDetails"
                         android:text=""/>
                 </LinearLayout>
 
@@ -494,14 +495,15 @@
         android:layout_height="0dip"
         android:layout_weight=".5"
         android:gravity="right|center_horizontal|center_vertical"
-        android:background="#FFFFFF">
+        android:background="#ffffff">
 
         <Button
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Button"
-            android:text="  Back  " />
+            android:text="  Back  "
+            android:layout_margin="10dp"/>
     </LinearLayout>
 
 
