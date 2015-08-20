@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class UserPojo implements Serializable {
 
 
-    private String VTC_User;
+
 
     public String getEnrollID_User() {
         return EnrollID_User;
@@ -18,8 +18,18 @@ public class UserPojo implements Serializable {
         EnrollID_User = enrollID_User;
     }
 
+    private String VTC_User;
     private String EnrollID_User;
-    private String Aadhaar_User;
+
+    public String getAadhaar() {
+        return Aadhaar;
+    }
+
+    public void setAadhaar(String aadhaar) {
+        Aadhaar = aadhaar;
+    }
+
+    private String Aadhaar;
     private String Resident_Name_user;
     private String DOB_User;
     private String Gender_User;
@@ -141,13 +151,7 @@ public class UserPojo implements Serializable {
 
 
 
-    public String getAadhaar_User() {
-        return Aadhaar_User;
-    }
 
-    public void setAadhaar_User(String aadhaar_User) {
-        Aadhaar_User = aadhaar_User;
-    }
 
     public String getResident_Name_user() {
         return Resident_Name_user;

@@ -90,7 +90,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
                         style="@style/TextBox3"
-                        android:text="Aadhaar ID"/>
+                        android:text="Date Of Birth"/>
 
                     <TextView
                         android:id="@+id/ud_aadhaarid"
@@ -141,7 +141,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
                         style="@style/TextBox3"
-                        android:text="Date Of Birth"/>
+                        android:text="Aadhaar ID"/>
 
                     <TextView
                         android:id="@+id/ud_dateofbirth"

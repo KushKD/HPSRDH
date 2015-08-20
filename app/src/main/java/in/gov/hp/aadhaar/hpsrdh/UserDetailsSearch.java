@@ -71,7 +71,7 @@ public class UserDetailsSearch extends Activity {
 
         EnrollID_User.setText(userDetails.getEnrollID_User());
         Resident_Name_user.setText(userDetails.getResident_Name_user());
-        Aadhaar_User.setText(userDetails.getAadhaar_User());
+        Aadhaar_User.setText(userDetails.getAadhaar());
         DOB_User.setText(userDetails.getDOB_User());
         Gender_User.setText(userDetails.getGender_User());
         Care_OFF_User.setText(userDetails.getCare_OFF_User());

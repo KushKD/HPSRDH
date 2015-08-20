@@ -2,6 +2,7 @@ package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +60,8 @@ public class UserAdapter extends ArrayAdapter<UserPojo> {
         tv3.setText(u.getResident_Name_user());
         tv4.setText(u.getDOB_User());
         tv5.setText(u.getGender_User());
+
+        Log.d("Aadhaar is", u.getAadhaar());
       /*  tv6.setText(u.getCare_OFF_User());
         tv7.setText(u.getAddress_Building_User());
         tv8.setText(u.getAddress_Street_User());
