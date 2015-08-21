@@ -57,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:visibility="visible"
                 android:layout_margin="5dp"
                 android:orientation="vertical">
 
@@ -76,12 +77,13 @@
                     android:text=""/>
                 </LinearLayout>
 
-                <!-- Aadhar ID -->
+                <!-- Date Of Birth -->
                 <LinearLayout
                     android:id="@+id/textview2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
+                    android:visibility="visible"
                     android:layout_margin="5dp"
                     android:orientation="vertical">
 
@@ -93,7 +95,7 @@
                         android:text="Date Of Birth"/>
 
                     <TextView
-                        android:id="@+id/ud_aadhaarid"
+                        android:id="@+id/ud_dateofbirth"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
@@ -127,7 +129,7 @@
                         android:text=""/>
                 </LinearLayout>
 
-                <!-- Date Of Birth -->
+                <!-- Aadhaar ID -->
                 <LinearLayout
                     android:id="@+id/textview4"
                     android:layout_width="match_parent"
@@ -144,7 +146,7 @@
                         android:text="Aadhaar ID"/>
 
                     <TextView
-                        android:id="@+id/ud_dateofbirth"
+                        android:id="@+id/ud_aadhaarid"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal|left"
@@ -159,7 +161,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -184,7 +187,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -209,7 +213,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -234,7 +239,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -259,7 +265,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -284,7 +291,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -309,7 +317,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -334,7 +343,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -359,7 +369,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -385,7 +396,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -410,7 +422,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -435,7 +448,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -460,7 +474,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="fill_parent"

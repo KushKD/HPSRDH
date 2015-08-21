@@ -138,7 +138,6 @@ public class UserListFour extends Activity {
             Name_S4 = params[1];
             FHNAme_S4 = params[2];
             Dob_S4 = params[3];
-//UriTemplate = "searchfour/{District}/{DOB}/{Name}/{FName}")]
             StringBuilder sb_search = new StringBuilder();
             sb_search.append(url_SearchService);
             sb_search.append( District_s4 + "/");

@@ -39,7 +39,7 @@ android:padding="5dip" >
 
 
 <TextView
-    android:id="@+id/textView3_name"
+    android:id="@+id/textView1_aadhaar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignTop="@+id/imageView1"
@@ -47,7 +47,7 @@ android:padding="5dip" >
     android:layout_marginLeft="75dip"
     android:layout_centerVertical="true"
     android:paddingBottom ="9dip"
-    android:text=""
+    android:text="eeee"
     android:textColor="#D52736"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:textSize="25dip"
@@ -57,33 +57,19 @@ android:padding="5dip" >
 <!-- Weather Information-->
 
 
-<TextView
-    android:id="@+id/textView4_DOB"
+    <TextView
+    android:id="@+id/textView2_name"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/textView3_name"
-    android:layout_alignLeft="@+id/textView3_name"
-    android:paddingTop="5dip"
-    android:layout_centerHorizontal="true"
-    android:text=""
-    android:textSize="15dip"
-    android:textColor="#D52736"
-    android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="three"
+    android:textSize="18dip"
+        android:layout_marginLeft="75dip"
 
-
-<TextView
-    android:id="@+id/textView5_gender"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
-    android:layout_marginRight="20dip"
-    android:layout_marginLeft="75dip"
-    android:text="three"
-    android:textSize="30dip"
-    android:background="#FFFFFF"
-    android:visibility="gone"
     android:textColor="#D52736"
-    android:textAppearance="?android:attr/textAppearanceLarge"/>
+    android:textAppearance="?android:attr/textAppearanceLarge"
+     android:layout_alignBottom="@+id/thumbnail"
+        android:layout_alignLeft="@+id/textView3_name"
+        android:layout_alignStart="@+id/textView3_name" />
 
 </RelativeLayout>
 
