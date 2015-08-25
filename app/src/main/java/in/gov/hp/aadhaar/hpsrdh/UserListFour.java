@@ -31,7 +31,7 @@ public class UserListFour extends Activity {
 
     ListView listv;
     Context context;
-    private static final String url_SearchService = "http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/searchfour/" ;
+    private static final String url_SearchService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/searchfour/" ;
 
 
     @Override

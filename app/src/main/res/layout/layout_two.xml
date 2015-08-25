@@ -101,7 +101,7 @@
                         android:contentDescription="@string/app_name"
                         android:layout_width="40dip"
                         android:layout_height="40dip"
-                        android:src="@drawable/phone" />
+                        android:src="@drawable/search_uid" />
                 </LinearLayout>
                 <!-- Rightend Arrow -->
 
@@ -110,8 +110,8 @@
                     android:id="@+id/edit_text_search_by_phone_number"
                     style="@style/TextBox"
                     android:inputType="phone"
-                    android:maxLength="10"
-                    android:hint="Search By Phone Number" />
+                    android:maxLength="14"
+                    android:hint="Search By EID" />
 
             </RelativeLayout>
         </LinearLayout>

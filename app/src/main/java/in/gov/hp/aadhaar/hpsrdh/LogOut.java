@@ -21,7 +21,7 @@ public class LogOut extends Activity {
     EditText et;
     Button b;
     String user = null;
-    private static final String url_loginService = "http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/logout/";
+    private static final String url_loginService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/logout/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -108,7 +108,7 @@
                     android:paddingBottom ="10dip"
                     android:textColor="#d52736"
                     android:text=""
-                    android:hint="Date OF Birth"
+                    android:hint="Date Of Birth"
                     android:textColorHint="#d52736"
                     android:textSize="20dip"
                     android:typeface="sans" />

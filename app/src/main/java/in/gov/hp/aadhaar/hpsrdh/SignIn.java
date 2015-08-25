@@ -25,7 +25,7 @@ public class SignIn extends Activity {
 
     Button login;
     EditText username , password;
-    private static final String url_loginService ="http://10.241.9.72/aadhaarweb/RestServiceImpl.svc/login/";
+    private static final String url_loginService ="http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/login/";
     public String IMIE_Number ;
 
 

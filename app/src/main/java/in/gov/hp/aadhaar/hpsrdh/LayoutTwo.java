@@ -2,6 +2,7 @@
 package in.gov.hp.aadhaar.hpsrdh;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -51,21 +52,41 @@ public class LayoutTwo extends Fragment {
 
 	private void Search_Data() {
 
-		String UID_Service , Phone_Service;
-		EncryptData ED = new EncryptData();
+		String UID_Service, EID_Service;
+		//EncryptData ED = new EncryptData();
 		UID_Service = UID_ET.getText().toString().trim();
-		Phone_Service = Phone_number_ET.getText().toString().trim();
+		EID_Service = Phone_number_ET.getText().toString().trim();
+
+		if (UID_Service.length() != 0 && UID_Service != null && EID_Service.length() != 0 && EID_Service != null) {
+
+				if (UID_Service.length() != 0 && UID_Service != null && UID_Service.length() == 12) {
+				//Encrypt UID Service
+				//String Crypt_UID = ED.Encrypt_String(UID_Service)
+
+					//Start Search By UID
+					//Search_UID search_Uid = new Search_UID();
+					//search_Uid.execute(UID_Service);
+					Intent i = new Intent(getActivity() , UID_Search_List.class);
+					i.putExtra("UID", UID_Service);
+					startActivity(i);
 
 
-		if(UID_Service.length()!=0 && UID_Service!= null){
-			//Encrypt UID Service
-			String Crypt_UID = ED.Encrypt_String(UID_Service);
+			}else if (EID_Service.length() != 0 && EID_Service != null && EID_Service.length() == 14){
 
+					//Start Search By EID
+					Intent i = new Intent(getActivity() , EID_Search_List.class);
+					i.putExtra("EID", EID_Service);
+					startActivity(i);
 
-		}else{
+				}
+				else {
 
-			Toast.makeText(getActivity(),"Aadhar ID cannto be empty",Toast.LENGTH_LONG).show();
+				Toast.makeText(getActivity(), "Please enter a valid Aadhaar ID or Enroll ID", Toast.LENGTH_LONG).show();
 
+			}
+
+		} else {
+			Toast.makeText(getActivity(), "Please enter your Aadhaar ID or Enroll ID", Toast.LENGTH_LONG).show();
 		}
 	}
 
