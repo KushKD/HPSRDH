@@ -17,4 +17,6 @@
     <string name="login">Login</string>
     <string name="title_activity_user_list">UserList</string>
     <string name="title_activity_user_details_search">UserDetailsSearch</string>
+    <string name="title_activity_uid__search__list">UID_Search_List</string>
+    <string name="title_activity_eid__search__list">EID_Search_List</string>
 </resources>

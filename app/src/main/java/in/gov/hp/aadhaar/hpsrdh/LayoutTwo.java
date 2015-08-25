@@ -64,8 +64,6 @@ public class LayoutTwo extends Fragment {
 				//String Crypt_UID = ED.Encrypt_String(UID_Service)
 
 					//Start Search By UID
-					//Search_UID search_Uid = new Search_UID();
-					//search_Uid.execute(UID_Service);
 					Intent i = new Intent(getActivity() , UID_Search_List.class);
 					i.putExtra("UID", UID_Service);
 					startActivity(i);
