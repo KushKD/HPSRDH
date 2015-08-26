@@ -34,7 +34,7 @@ public class UserJson_UID {
 
                 JSONObject obj = new JSONObject(content);
 
-                g_Table = obj.optString("===========");  //change the value here
+                g_Table = obj.optString("GetWithAadhaarResult");  //change the value here
                 Log.d("Table===",g_Table);
 
             }

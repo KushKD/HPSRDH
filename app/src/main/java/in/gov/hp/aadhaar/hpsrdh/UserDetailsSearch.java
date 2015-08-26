@@ -32,10 +32,10 @@ public class UserDetailsSearch extends Activity {
 
         Intent getRoomDetailsIntent = getIntent();
         UserPojo userDetails =  (UserPojo) getRoomDetailsIntent.getSerializableExtra("Details");
-        Toast.makeText(getApplicationContext(),"Got IT",Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),"Got IT",Toast.LENGTH_LONG).show();
 
 
-         Aadhaar_User  = (TextView)findViewById(R.id.ud_aadhaarid);
+        Aadhaar_User  = (TextView)findViewById(R.id.ud_aadhaarid);
         Resident_Name_user  = (TextView)findViewById(R.id.ud_name);
         EnrollID_User = (TextView)findViewById(R.id.ud_enrollid);
         District_user = (TextView)findViewById(R.id.ud_District);

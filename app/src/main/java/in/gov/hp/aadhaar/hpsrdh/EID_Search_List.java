@@ -29,7 +29,7 @@ public class EID_Search_List extends Activity {
 
     ListView listv;
     Context context;
-    private static final String url_SearchService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/???/" ;
+    private static final String url_SearchService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/searbyEID/" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

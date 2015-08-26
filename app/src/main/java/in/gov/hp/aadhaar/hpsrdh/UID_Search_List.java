@@ -27,7 +27,7 @@ public class UID_Search_List extends Activity {
     List<UserPojo> userlist;
     ListView listv;
     Context context;
-    private static final String url_SearchService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/???need to change here???/" ;
+    private static final String url_SearchService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/searbyAadhaar/" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
