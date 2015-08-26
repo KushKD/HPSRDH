@@ -15,22 +15,16 @@ public class HttpManager {
     public static String getData(String uri) {
 
         BufferedReader reader = null;
-        System.out.print("====="+uri);
-
         try {
             URL url = new URL(uri);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
             StringBuilder sb = new StringBuilder();
             reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
             String line;
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
             }
-            Log.d("Value From the Internet", sb.toString());
             return sb.toString();
-
         } catch (Exception e) {
             e.printStackTrace();
             return null;

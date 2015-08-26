@@ -25,11 +25,8 @@ public class EID_Search_List extends Activity {
     ProgressBar pb;
     List<EID_Async> tasks;
     List<UserPojo> userlist;
-
-
     ListView listv;
     Context context;
-    private static final String url_SearchService = "http://aadhaar.hp.gov.in/hpuidmobileservice/RestServiceImpl.svc/searbyEID/" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +35,7 @@ public class EID_Search_List extends Activity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        EID_Service = bundle.getString("EID");
+        EID_Service = bundle.getString(EConstants.EID);
 
         listv = (ListView) findViewById(R.id.list);
         context = this;
@@ -52,7 +49,7 @@ public class EID_Search_List extends Activity {
             EID_Async EID = new EID_Async();
             EID.execute(EID_Service);
         } else {
-            Toast.makeText(this, "Network isn't available", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, EConstants.NetworkError, Toast.LENGTH_LONG).show();
         }
 
         listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,11 +62,9 @@ public class EID_Search_List extends Activity {
                 userSearch.putExtra("Details", userDetails);
                 userSearch.setClass(EID_Search_List.this, UserDetailsSearch.class);
                 startActivity(userSearch);
-
             }
         });
     }
-
     protected boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
@@ -80,24 +75,10 @@ public class EID_Search_List extends Activity {
         }
     }
 
-
     protected void updateDisplay() {
-
-//        if (guestHouseList != null) {
-//            for (GuestHousePojo guesthouse : guestHouseList) {
-//                output.append(guesthouse.getRoomNo() +"\t" + guesthouse.getOrientation() +"\t"+ guesthouse.getType_Of_Room() + "\n");
-//            }
-//        }
-
         UserAdapter adapter = new UserAdapter(this, R.layout.item_flower, userlist);
         listv.setAdapter(adapter);
-
     }
-
-
-    /**
-     * EID Service
-     */
 
     class EID_Async extends AsyncTask<String,String,String> {
 
@@ -121,38 +102,28 @@ public class EID_Search_List extends Activity {
             EID_S = params[0];
 
             StringBuilder sb_search = new StringBuilder();
-            sb_search.append(url_SearchService);
+            sb_search.append(EConstants.url_Generic);sb_search.append(EConstants.url_Delemetre);
+            sb_search.append(EConstants.methord_SearchEID);sb_search.append(EConstants.url_Delemetre);
             sb_search.append( EID_S );
-
             url = sb_search.toString();
-
             String content = HttpManager.getData(url);
-
-            //Json Parsing Goes Here
-
-
-
             return content;
         }
 
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-
-            // Log.d("######", result);
-            //Toast.makeText(UserListFour.this,result,Toast.LENGTH_LONG).show();
-
             userlist = UserJson_EID.parseFeed(result);
-            updateDisplay();
-
+            if(userlist.isEmpty()){
+                Toast.makeText(getApplicationContext(),EConstants.ListEmpty,Toast.LENGTH_LONG).show();
+            }else{
+                updateDisplay();
+            }
             tasks.remove(this);
             if (tasks.size() == 0) {
                 pb.setVisibility(View.INVISIBLE);
-                // output.setText(result);
             }
 
-
-            System.out.print(result);
         }
     }
 

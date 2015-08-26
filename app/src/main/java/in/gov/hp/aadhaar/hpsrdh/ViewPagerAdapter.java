@@ -18,10 +18,10 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 		Fragment f = new Fragment();
 		switch(position){
 		case 0:
-			f=LayoutOne.newInstance(_context);	
+			f= AdvancedSearch.newInstance(_context);
 			break;
 		case 1:
-			f=LayoutTwo.newInstance(_context);	
+			f= BasicSearch.newInstance(_context);
 			break;
 		}
 		return f;

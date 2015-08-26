@@ -12,14 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LayoutTwo extends Fragment {
+public class BasicSearch extends Fragment {
 
-	EditText UID_ET , Phone_number_ET ;
-	Button BSearch;
+	private EditText UID_ET , Phone_number_ET ;
+	private Button BSearch;
 
 
 	public static Fragment newInstance(Context context) {
-		LayoutTwo f = new LayoutTwo();
+		BasicSearch f = new BasicSearch();
 		return f;
 	}
 
@@ -46,28 +46,27 @@ public class LayoutTwo extends Fragment {
 
 	private void Search_Data() {
 		String UID_Service, EID_Service;
-		//EncryptData ED = new EncryptData();
 		UID_Service = UID_ET.getText().toString().trim();
 		EID_Service = Phone_number_ET.getText().toString().trim();
 		if(UID_Service.length() == 0 && EID_Service.length()==0 ){
-			Toast.makeText(getActivity(), "Please enter your Aadhaar no. or Enroll Id no.", Toast.LENGTH_LONG).show();
+			Toast.makeText(getActivity(),EConstants.ErrorAadhaarnEId, Toast.LENGTH_LONG).show();
 		}else{
 
 			if(UID_Service != null && UID_Service.length()!=0 ){
 				if (UID_Service.length() == 12 ) {
 					Intent i = new Intent(getActivity() , UID_Search_List.class);
-					i.putExtra("UID", UID_Service);
+					i.putExtra(EConstants.UID, UID_Service);
 					startActivity(i);
 				}else{
-					Toast.makeText(getActivity(), "Aadhar ID is not valid", Toast.LENGTH_LONG).show();
+					Toast.makeText(getActivity(),EConstants.AadhaarInvalid, Toast.LENGTH_LONG).show();
 				}
 			}else if(EID_Service!=null){
 				if(EID_Service.length()==14){
 					Intent i = new Intent(getActivity() , EID_Search_List.class);
-					i.putExtra("EID", EID_Service);
+					i.putExtra(EConstants.EID, EID_Service);
 					startActivity(i);
 				}else{
-					Toast.makeText(getActivity(), "Please enter a valid Enroll ID", Toast.LENGTH_LONG).show();
+					Toast.makeText(getActivity(), EConstants.EIDInvalid, Toast.LENGTH_LONG).show();
 				}
 			}
 

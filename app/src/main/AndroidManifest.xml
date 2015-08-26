@@ -24,8 +24,6 @@
         <activity
             android:name=".DateTimePicker"
             android:launchMode="singleInstance" />
-        <activity android:name=".MainActivity" >
-        </activity>
         <activity
             android:name=".LoginActivity"
             android:launchMode="singleInstance" >
@@ -43,11 +41,11 @@
             android:launchMode="singleInstance" >
         </activity>
         <activity
-            android:name=".UserListFour"
+            android:name=".AdvancedListFour"
             android:label="@string/title_activity_user_list" >
         </activity>
         <activity
-            android:name=".UserListFive"
+            android:name=".AdvancedListFive"
             android:label="@string/title_activity_user_list" >
         </activity>
         <activity

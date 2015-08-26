@@ -13,7 +13,7 @@ package in.gov.hp.aadhaar.hpsrdh;
 /**
  * Created by KD on 7/28/2015.
  */
-public class UserJson2 {
+public class UserJson_FourParameters {
 
     public static List<UserPojo> parseFeed(String content) {
 
@@ -27,14 +27,9 @@ public class UserJson2 {
             if (json instanceof JSONObject){
 
                 Log.d("Json ", "Object");
-                // JSONArray arr = new JSONArray(content);
-                // JSONObject jObj = arr.getJSONObject(0);
-                // JSONArray ar = jObj.getJSONArray("Table");
-                // Log.d("Table===",ar.toString());
 
                 JSONObject obj = new JSONObject(content);
-
-                g_Table = obj.optString("GetAllUsers4Result");
+                g_Table = obj.optString(EConstants.UserResultFourP);
                 Log.d("Table===",g_Table);
 
             }

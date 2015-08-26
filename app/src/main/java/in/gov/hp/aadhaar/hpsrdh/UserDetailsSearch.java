@@ -2,17 +2,11 @@ package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 
 public class UserDetailsSearch extends Activity {
@@ -32,7 +26,6 @@ public class UserDetailsSearch extends Activity {
 
         Intent getRoomDetailsIntent = getIntent();
         UserPojo userDetails =  (UserPojo) getRoomDetailsIntent.getSerializableExtra("Details");
-        //Toast.makeText(getApplicationContext(),"Got IT",Toast.LENGTH_LONG).show();
 
 
         Aadhaar_User  = (TextView)findViewById(R.id.ud_aadhaarid);
@@ -78,7 +71,7 @@ public class UserDetailsSearch extends Activity {
         IV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Getting the Image",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"Getting the Image",Toast.LENGTH_LONG).show();
             }
         });
 

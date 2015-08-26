@@ -28,8 +28,6 @@ public class JSONParser {
     static InputStream is = null;
     static String verify = null;
    public  String varification = "";
-
-
     public JSONParser() {
 
     }

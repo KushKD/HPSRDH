@@ -34,7 +34,7 @@ public class UserJson_EID {
 
                 JSONObject obj = new JSONObject(content);
 
-                g_Table = obj.optString("GetWithEIDResult");
+                g_Table = obj.optString(EConstants.UserResultEIDSearch);
                 Log.d("Table===",g_Table);
 
             }

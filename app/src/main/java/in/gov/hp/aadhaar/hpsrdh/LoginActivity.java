@@ -28,9 +28,6 @@ public class LoginActivity extends Activity {
         tv_IMEI = (TextView)findViewById(R.id.tv_imei);
         button_main = (RelativeLayout)findViewById(R.id.button_main);
 
-
-        //tv_IMEI.setText(IMIE_Number);
-
         button_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
