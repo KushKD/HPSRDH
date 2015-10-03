@@ -48,13 +48,14 @@
                 <!-- Rightend Arrow -->
 
                 <!-- City -->
-                <Spinner
+                <EditText
                     android:id="@+id/edit_text_district"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Enter District"
+                    android:textColorHint="#d52736"
                     android:layout_toRightOf="@+id/list_image_district"
                     android:layout_marginLeft="75dip"
-
                     android:layout_centerVertical="true"
                     android:paddingBottom ="10dip"
                    />

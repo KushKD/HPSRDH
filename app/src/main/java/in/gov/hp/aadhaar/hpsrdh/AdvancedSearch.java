@@ -22,7 +22,7 @@ public class AdvancedSearch extends Fragment {
 	ArrayAdapter<String> districts = null;
 	private EditText  name , fHname , pincode;
 	private TextView date_of_birth;
-	private Spinner district;
+	private EditText district;
 	private Button SearchService;
 	private int mSelectedYear;
 	private int mSelectedMonth;
@@ -53,7 +53,7 @@ public class AdvancedSearch extends Fragment {
 
 		ViewGroup root = (ViewGroup) inflater.inflate(R.layout.layout_one, null);
 
-		district = (Spinner)root.findViewById(R.id.edit_text_district);
+		district = (EditText)root.findViewById(R.id.edit_text_district);
         SearchService = (Button)root.findViewById(R.id.button_search);
 
 
@@ -62,8 +62,8 @@ public class AdvancedSearch extends Fragment {
 		fHname = (EditText)root.findViewById(R.id.edit_text_father_husband_name);
 		pincode = (EditText)root.findViewById(R.id.edit_text_pincode);
 
-		districts = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, getResources().getStringArray(R.array.district));
-		district.setAdapter(districts);
+		//districts = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, getResources().getStringArray(R.array.district));
+		//district.setAdapter(districts);
 
 
 		date_of_birth.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +88,7 @@ public class AdvancedSearch extends Fragment {
 
 	private void Get_Data() {
 		String District_Service , DOB_Service , Name_Service , FHName_Service , PinCode_Service;
-		District_Service = district.getSelectedItem().toString().trim();
+		District_Service = district.getText().toString().trim();
 		DOB_Service = date_of_birth.getText().toString().trim();
 		Name_Service = name.getText().toString().trim();
 		FHName_Service = fHname.getText().toString().trim();
@@ -97,13 +97,9 @@ public class AdvancedSearch extends Fragment {
 
 		if(District_Service.length()!=0 && District_Service!=null){
 
-			if (DOB_Service.length()!=0 && DOB_Service!= null){
 
-				if(Name_Service.length()!= 0 && Name_Service!= null){
 
-					if(FHName_Service.length()!= 0 && FHName_Service!= null){
-
-						if(PinCode_Service.length()!= 0 && PinCode_Service!= null){
+					//	if(PinCode_Service.length()!= 0 && PinCode_Service!= null){
 							Intent i = new Intent(getActivity() , AdvancedListFive.class);
 							i.putExtra(EConstants.D, District_Service);
 							i.putExtra(EConstants.N, Name_Service);
@@ -111,23 +107,7 @@ public class AdvancedSearch extends Fragment {
 							i.putExtra(EConstants.DOB, DOB_Service);
 							i.putExtra(EConstants.P,PinCode_Service);
 							startActivity(i);
-						}else{
-							Intent i = new Intent(getActivity() , AdvancedListFour.class);
-							i.putExtra(EConstants.D4, District_Service);
-							i.putExtra(EConstants.N4, Name_Service);
-							i.putExtra(EConstants.FH4, FHName_Service);
-							i.putExtra(EConstants.DOB4, DOB_Service);
-							startActivity(i);
-						}
-					}else{
-						Toast.makeText(getActivity(),EConstants.Father_HusbandError,Toast.LENGTH_LONG).show();
-					}
-				}else{
-					Toast.makeText(getActivity(), EConstants.NameError,Toast.LENGTH_LONG).show();
-				}
-			}else{
-				Toast.makeText(getActivity(),EConstants.DateOfBirthError,Toast.LENGTH_LONG).show();
-			}
+
 		}else{
 			Toast.makeText(getActivity(), EConstants.SelectDistricError ,Toast.LENGTH_LONG).show();
 		}

@@ -12,6 +12,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONStringer;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +40,9 @@ public class AdvancedListFive extends Activity {
     List<FiveParameters_Async> tasks;
     List<UserPojo> userlist;
 
+    URL url_;
+    HttpURLConnection conn_;
+    StringBuilder sb = new StringBuilder();
 
     ListView listv;
     Context context;
@@ -89,11 +103,7 @@ public class AdvancedListFive extends Activity {
 
  class FiveParameters_Async extends AsyncTask<String,String,String> {
 
-        String District_s5 = null;
-        String Dob_S5 = null;
-        String Name_S5 = null;
-        String FHNAme_S5= null;
-        String Pincode_S5 = null;
+
         String url = null;
 
         @Override
@@ -110,25 +120,63 @@ public class AdvancedListFive extends Activity {
         @Override
         protected String doInBackground(String... params) {
 
-            District_s5 = params[0];
-            Name_S5 = params[1];
-            FHNAme_S5 = params[2];
-            Dob_S5 = params[3];
-            Pincode_S5 = params[4];
+
+            try {
+                url_ =new URL(EConstants.url_Generic_Search);
+                conn_ = (HttpURLConnection)url_.openConnection();
+                conn_.setDoOutput(true);
+                conn_.setRequestMethod("GET");
+                conn_.setUseCaches(false);
+                conn_.setConnectTimeout(10000);
+                conn_.setReadTimeout(10000);
+                conn_.setRequestProperty("Content-Type", "application/json");
+                conn_.connect();
+
+                JSONStringer userJson = new JSONStringer()
+                        .object().key("HPSRDH_Search")
+                        .object()
+                        .key("District").value(params[0])
+                        .key("Name").value(params[1])
+                        .key("F_H_Name").value(params[2])
+                        .key("D0B").value(params[3])
+                        .key("Pincode").value(params[4])
+                        .endObject()
+                        .endObject();
+
+                System.out.println("#############"+userJson.toString());
+                OutputStreamWriter out = new   OutputStreamWriter(conn_.getOutputStream());
+                out.write(userJson.toString());
+                out.close();
+
+                int HttpResult =conn_.getResponseCode();
+                if(HttpResult ==HttpURLConnection.HTTP_OK){
+                    BufferedReader br = new BufferedReader(new InputStreamReader(conn_.getInputStream(),"utf-8"));
+                    String line = null;
+                    while ((line = br.readLine()) != null) {
+                        sb.append(line + "\n");
+                        System.out.println(sb.toString()+ "@@@@@@");
+                    }
+                    br.close();
+
+
+                }else{
+                    System.out.println(conn_.getResponseMessage());
+                }
+
+             } catch (MalformedURLException e) {
+         e.printStackTrace();
+     } catch (IOException e) {
+         e.printStackTrace();
+     } catch (JSONException e) {
+         e.printStackTrace();
+     }finally{
+         if(conn_!=null)
+             conn_.disconnect();
+     }
+     return sb.toString();
 
 
 
-            StringBuilder sb_search = new StringBuilder();
-            sb_search.append(EConstants.url_Generic); sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(EConstants.methord_fiveParams); sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(District_s5); sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(Name_S5); sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(Dob_S5); sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(FHNAme_S5); sb_search.append(EConstants.url_Delemetre);
-            sb_search.append(Pincode_S5);
-            url = sb_search.toString();
-            String content = HttpManager.getData(url);
-            return content;
         }
 
         @Override
@@ -140,15 +188,10 @@ public class AdvancedListFive extends Activity {
             }else{
                 updateDisplay();
             }
-
-
             tasks.remove(this);
             if (tasks.size() == 0) {
                 pb.setVisibility(View.INVISIBLE);
             }
-
-
-           // System.out.print(result);
         }
     }
 }

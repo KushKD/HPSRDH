@@ -41,10 +41,6 @@
             android:launchMode="singleInstance" >
         </activity>
         <activity
-            android:name=".AdvancedListFour"
-            android:label="@string/title_activity_user_list" >
-        </activity>
-        <activity
             android:name=".AdvancedListFive"
             android:label="@string/title_activity_user_list" >
         </activity>
