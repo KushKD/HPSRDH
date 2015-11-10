@@ -42,8 +42,6 @@ android:padding="5dip" >
     android:id="@+id/textView1_aadhaar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignTop="@+id/imageView1"
-    android:layout_toRightOf="@+id/imageView1"
     android:layout_marginLeft="75dip"
     android:layout_centerVertical="true"
     android:paddingBottom ="9dip"
@@ -67,9 +65,7 @@ android:padding="5dip" >
 
     android:textColor="#D52736"
     android:textAppearance="?android:attr/textAppearanceLarge"
-     android:layout_alignBottom="@+id/thumbnail"
-        android:layout_alignLeft="@+id/textView3_name"
-        android:layout_alignStart="@+id/textView3_name" />
+     android:layout_alignBottom="@+id/thumbnail" />
 
 </RelativeLayout>
 

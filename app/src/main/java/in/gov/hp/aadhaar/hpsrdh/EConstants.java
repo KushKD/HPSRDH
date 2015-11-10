@@ -6,7 +6,7 @@ package in.gov.hp.aadhaar.hpsrdh;
 public  class EConstants {
 
     public static final String url_Generic = "http://hp.gov.in/uidreport/AWW.svc" ;
-   public static final String url_Generic_Search = "http://hp.gov.in/uidreport/AWW.svc/Search" ;
+    public static final String url_Generic_Search = "http://hp.gov.in/uidreport/AWW.svc/Search" ;
     public static final String methord_Login = "signin";
     public static final String methord_Logout = "signout";
     public static final String methord_SearchEID = "searbyEID";
