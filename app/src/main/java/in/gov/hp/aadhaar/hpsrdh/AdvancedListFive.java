@@ -125,10 +125,10 @@ public class AdvancedListFive extends Activity {
                 url_ =new URL(EConstants.url_Generic_Search);
                 conn_ = (HttpURLConnection)url_.openConnection();
                 conn_.setDoOutput(true);
-                conn_.setRequestMethod("GET");
+                conn_.setRequestMethod("POST");
                 conn_.setUseCaches(false);
-                conn_.setConnectTimeout(10000);
-                conn_.setReadTimeout(10000);
+                conn_.setConnectTimeout(20000);
+                conn_.setReadTimeout(20000);
                 conn_.setRequestProperty("Content-Type", "application/json");
                 conn_.connect();
 
@@ -138,7 +138,7 @@ public class AdvancedListFive extends Activity {
                         .key("District").value(params[0])
                         .key("Name").value(params[1])
                         .key("F_H_Name").value(params[2])
-                        .key("D0B").value(params[3])
+                        .key("DOB").value(params[3])
                         .key("Pincode").value(params[4])
                         .endObject()
                         .endObject();
@@ -150,6 +150,7 @@ public class AdvancedListFive extends Activity {
 
                 int HttpResult =conn_.getResponseCode();
                 if(HttpResult ==HttpURLConnection.HTTP_OK){
+                    System.out.println(HttpResult+ "@@@@@@");
                     BufferedReader br = new BufferedReader(new InputStreamReader(conn_.getInputStream(),"utf-8"));
                     String line = null;
                     while ((line = br.readLine()) != null) {
@@ -185,7 +186,11 @@ public class AdvancedListFive extends Activity {
             userlist = UserJson_FiveParameters.parseFeed(result);
             if(userlist.isEmpty()){
                 Toast.makeText(getApplicationContext(),EConstants.ListEmpty,Toast.LENGTH_LONG).show();
-            }else{
+            }if(userlist.size()>=100) {
+                updateDisplay();
+                Toast.makeText(getApplicationContext(),"Only the top 100 results are being displayed. Please be more specific. ",Toast.LENGTH_LONG).show();
+            }else
+             {
                 updateDisplay();
             }
             tasks.remove(this);

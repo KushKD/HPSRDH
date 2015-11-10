@@ -95,7 +95,7 @@ public class AdvancedSearch extends Fragment {
 		PinCode_Service = pincode.getText().toString().trim();
 
 
-		if(District_Service.length()!=0 && District_Service!=null){
+		if( District_Service.length()!=0 || DOB_Service.length()!=0 || Name_Service.length()!=0|| FHName_Service.length() !=0 || PinCode_Service.length()!=0){
 
 
 
@@ -109,7 +109,7 @@ public class AdvancedSearch extends Fragment {
 							startActivity(i);
 
 		}else{
-			Toast.makeText(getActivity(), EConstants.SelectDistricError ,Toast.LENGTH_LONG).show();
+			Toast.makeText(getActivity(), " Our Central System is as big as the universe. Please provide some parameter.  " ,Toast.LENGTH_LONG).show();
 		}
 	}
 

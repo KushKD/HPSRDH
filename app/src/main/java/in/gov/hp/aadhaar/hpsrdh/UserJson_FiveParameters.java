@@ -25,7 +25,7 @@ public class UserJson_FiveParameters {
             if (json instanceof JSONObject){
               //  Log.d("Json ", "Object");
                 JSONObject obj = new JSONObject(content);
-                g_Table = obj.optString(EConstants.UserResultFiveP);
+                g_Table = obj.optString("SearchResult");
                 Log.d("Table===",g_Table);
             }
             //you have an object
