@@ -11,7 +11,7 @@
     <string name="login_start">Login to Your Account</string>
 
     <string name="logn_prompt">Please Enter Your Username and Password</string>
-    <string name="logn_prompt_logout">You are already Logged in. You need to first logout and then login again to access your account</string>
+    <string name="logn_prompt_logout">You are already logged in. You need to first logout and then login again to access your account.</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>

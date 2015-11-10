@@ -66,7 +66,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical|center_horizontal|left"
                     style="@style/TextBox3"
-                    android:text="Enroll ID"/>
+                    android:text="Enrolment ID"/>
 
                 <TextView
                     android:id="@+id/ud_enrollid"
@@ -195,7 +195,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal|left"
                         style="@style/TextBox3"
-                        android:text="Care Off"/>
+                        android:text="Care of"/>
 
                     <TextView
                         android:id="@+id/ud_careoff"

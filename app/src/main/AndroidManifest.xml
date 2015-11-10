@@ -14,47 +14,56 @@
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"
-            android:launchMode="singleInstance" >
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".DateTimePicker"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LoginActivity"
-            android:launchMode="singleInstance" >
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".SignIn"
-            android:label="@string/title_activity_sign_in" >
+            android:label="@string/title_activity_sign_in"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".ViewPagerStyle1Activity"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LogOut"
             android:label="@string/title_activity_log_out"
-            android:launchMode="singleInstance" >
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".AdvancedListFive"
-            android:label="@string/title_activity_user_list" >
+            android:label="@string/title_activity_user_list"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".UserDetailsSearch"
-            android:label="@string/title_activity_user_details_search" >
+            android:label="@string/title_activity_user_details_search"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".UID_Search_List"
-            android:label="@string/title_activity_uid__search__list" >
+            android:label="@string/title_activity_uid__search__list"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".EID_Search_List"
-            android:label="@string/title_activity_eid__search__list" >
+            android:label="@string/title_activity_eid__search__list"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
