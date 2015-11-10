@@ -3,6 +3,7 @@ package in.gov.hp.aadhaar.hpsrdh;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -57,8 +58,17 @@ public class UserDetailsSearch extends Activity {
         Address_Landmark_User.setText(userDetails.getAddress_Landmark_User());
         Address_Locality_User.setText(userDetails.getAddress_Locality_User());
         Address_Street_User.setText(userDetails.getAddress_Street_User());
-        DOB_user.setText(userDetails.getDOB_user());
 
+        //Check The DOB Length
+        if(userDetails.getDOB_user().length() > 9) {
+            String DOB = userDetails.getDOB_user();
+            DOB_user.setText(DOB.substring(0, 8));
+            Log.d("DOB",DOB.substring(0, 8));
+
+        }if(userDetails.getDOB_user().length() < 9){
+            DOB_user.setText(userDetails.getDOB_user());
+            Log.d("DOB", userDetails.getDOB_user());
+        }
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
