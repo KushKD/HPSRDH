@@ -53,16 +53,19 @@
         <activity
             android:name=".UserDetailsSearch"
             android:label="@string/title_activity_user_details_search"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".UID_Search_List"
             android:label="@string/title_activity_uid__search__list"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".EID_Search_List"
             android:label="@string/title_activity_eid__search__list"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
     </application>

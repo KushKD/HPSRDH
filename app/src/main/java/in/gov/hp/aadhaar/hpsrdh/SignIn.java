@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -21,6 +22,7 @@ public class SignIn extends Activity {
    private Button login;
    private EditText username , password;
    private String IMIE_Number ;
+    public String UserName_SH ;
 
 
     @Override
@@ -94,6 +96,19 @@ public class SignIn extends Activity {
           String url;
           String userAuth;
 
+           //Save Username in shared Prefrences here
+          SharedPreferences sharedpreferences = getSharedPreferences("UserName", Context.MODE_PRIVATE);
+          SharedPreferences.Editor editor = sharedpreferences.edit();
+          editor.putString("USERNAME", username_service);
+          editor.commit();
+
+          sharedpreferences = getSharedPreferences("UserName",Context.MODE_PRIVATE);
+
+          if (sharedpreferences.contains("USERNAME")) {
+              UserName_SH =  sharedpreferences.getString("USERNAME", "");
+          }
+
+
           EncryptData crypt = new EncryptData();
           String crypt_username = crypt.Encrypt_String(username_service);
           String crypt_password = crypt.Encrypt_String(password_service);
@@ -129,12 +144,14 @@ public class SignIn extends Activity {
           super.onPostExecute(server_value);
           this.dialog.dismiss();
           if (server_value) {
+             // Toast.makeText(getApplicationContext(),UserName_SH,Toast.LENGTH_SHORT).show();
               Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
               startActivity(i_2);
               SignIn.this.finish();
           }
           else
           {
+             // Toast.makeText(getApplicationContext(),UserName_SH,Toast.LENGTH_SHORT).show();
               Toast.makeText(getApplicationContext(),EConstants.ErrorMessageLoginScreen,Toast.LENGTH_SHORT).show();
               Intent i_3 = new Intent(SignIn.this, LogOut.class);
               startActivity(i_3);

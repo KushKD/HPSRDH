@@ -41,7 +41,7 @@ public class LogOut extends Activity {
             }
         });
     }
-    class Logout extends AsyncTask<String,String,Boolean>{
+   public class Logout extends AsyncTask<String,String,Boolean>{
 
         String url = null;
         private ProgressDialog dialog;
