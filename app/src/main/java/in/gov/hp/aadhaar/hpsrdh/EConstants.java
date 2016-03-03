@@ -13,7 +13,7 @@ public  class EConstants {
     public static final String methord_SearchAadaar = "";
     public static final String methord_fourParams = "";
     public static final String methord_fiveParams= "";
-    public static final String url_Delemetre = "";
+    public static final String url_Delemetre = "/";
     public static final String ProgressDialog_Message = "Please wait....";
     public static final String ErrorMessageUnknow = "Something Went Wrong. Please check your network connectivity";
     public static final String ErrorUserEmpty = "Username cannot be empty";

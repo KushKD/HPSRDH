@@ -2,13 +2,16 @@ package in.gov.hp.aadhaar.hpsrdh;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -84,16 +87,22 @@ public class ViewPagerStyle1Activity extends FragmentActivity {
 	public void onBackPressed() {
 	//	super.onBackPressed();
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("Are you sure you want to exit the Application?")
+		builder.setMessage("Are you sure you want to exit the HPSRDH application?")
 				.setCancelable(false)
 				.setPositiveButton("Yes",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
-								Toast.makeText(getApplicationContext(),"Logout Functionality Goes Here",Toast.LENGTH_SHORT).show();
-								Toast.makeText(getApplicationContext(),SI.UserName_SH,Toast.LENGTH_SHORT).show();
+								//Toast.makeText(getApplicationContext(),"Logout Functionality Goes Here",Toast.LENGTH_SHORT).show();
+								//Toast.makeText(getApplicationContext(),SI.UserName_SH,Toast.LENGTH_SHORT).show();
 								   //Async Task For LogOut Goes Here
 
-								LO.execute(SI.UserName_SH);
+								SharedPreferences sharedpreferences = getSharedPreferences("UserName", Context.MODE_PRIVATE);
+								String Username_SH=null;
+								if (sharedpreferences.contains("USERNAME")) {
+									Username_SH =  sharedpreferences.getString("USERNAME", "");
+									Log.d("User Name is: ",Username_SH);
+								}
+								LO.execute(Username_SH);
 
 
 							}
@@ -164,7 +173,11 @@ public class ViewPagerStyle1Activity extends FragmentActivity {
 
 
 			if(s) {
+				Log.d("Result Exit", s.toString());
 				ViewPagerStyle1Activity.this.finish();
+				int pid = android.os.Process.myPid();
+				android.os.Process.killProcess(pid);
+
 			}else {
 				Toast.makeText(getApplicationContext(), EConstants.ErrorMessageUnknow, Toast.LENGTH_LONG).show();
 			}

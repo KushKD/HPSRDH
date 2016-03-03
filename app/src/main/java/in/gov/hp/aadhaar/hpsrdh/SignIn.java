@@ -146,6 +146,7 @@ public class SignIn extends Activity {
           if (server_value) {
              // Toast.makeText(getApplicationContext(),UserName_SH,Toast.LENGTH_SHORT).show();
               Intent i_2 = new Intent(SignIn.this, ViewPagerStyle1Activity.class);
+              i_2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
               startActivity(i_2);
               SignIn.this.finish();
           }

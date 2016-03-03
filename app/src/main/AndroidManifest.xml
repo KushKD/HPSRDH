@@ -38,6 +38,7 @@
         <activity
             android:name=".ViewPagerStyle1Activity"
             android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".LogOut"
