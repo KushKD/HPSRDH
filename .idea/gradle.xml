@@ -11,18 +11,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/datetimepicker_presentation-library" />
-            <option value="$PROJECT_DIR$/hpsrdh.presentation" />
-            <option value="$PROJECT_DIR$/presentation" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/datetimepicker_presentation-library" />
-            <option value="$PROJECT_DIR$/hpsrdh.presentation" />
-            <option value="$PROJECT_DIR$/presentation" />
           </set>
         </option>
       </GradleProjectSettings>

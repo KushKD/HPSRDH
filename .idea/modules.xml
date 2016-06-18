@@ -4,9 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HPSRDH.iml" filepath="$PROJECT_DIR$/HPSRDH.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/datetimepicker_presentation-library/datetimepicker_presentation-library.iml" filepath="$PROJECT_DIR$/datetimepicker_presentation-library/datetimepicker_presentation-library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hpsrdh.presentation/hpsrdh.presentation.iml" filepath="$PROJECT_DIR$/hpsrdh.presentation/hpsrdh.presentation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/presentation/presentation.iml" filepath="$PROJECT_DIR$/presentation/presentation.iml" />
     </modules>
   </component>
 </project>
