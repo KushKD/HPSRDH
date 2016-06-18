@@ -1,4 +1,4 @@
-package in.gov.hp.aadhaar.hpsrdh;
+package in.gov.hp.aadhaar._HPSRDH;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

@@ -1,6 +1,5 @@
-package in.gov.hp.aadhaar.hpsrdh;
+package in.gov.hp.aadhaar._HPSRDH;
 
-import org.json.JSONArray;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,10 +14,8 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
+
 import android.util.Log;
-import java.io.InputStream;
 
 /**
  * Created by kush on 17/07/15.

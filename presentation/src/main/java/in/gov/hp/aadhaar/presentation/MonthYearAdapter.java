@@ -21,9 +21,7 @@ import java.util.IllegalFormatException;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Created by Rahul Raja on 9/25/2014.
- */
+
 public class MonthYearAdapter extends BaseAdapter{
 
     private static LayoutInflater inflater = null;

@@ -1,10 +1,9 @@
-package in.gov.hp.aadhaar.hpsrdh;
+package in.gov.hp.aadhaar._HPSRDH;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,14 +11,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-
-import in.gov.hp.aadhaar.hpsrdh.LogOut.Logout;
 
 
 public class ViewPagerStyle1Activity extends FragmentActivity {

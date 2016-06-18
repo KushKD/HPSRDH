@@ -1,5 +1,5 @@
 
-package in.gov.hp.aadhaar.hpsrdh;
+package in.gov.hp.aadhaar._HPSRDH;
 
 import android.content.Context;
 import android.content.Intent;

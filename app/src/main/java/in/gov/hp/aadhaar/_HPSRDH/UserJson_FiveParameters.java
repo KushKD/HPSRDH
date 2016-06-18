@@ -1,8 +1,7 @@
-package in.gov.hp.aadhaar.hpsrdh;
+package in.gov.hp.aadhaar._HPSRDH;
 
 
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;

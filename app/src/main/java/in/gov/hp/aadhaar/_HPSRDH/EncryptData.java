@@ -1,4 +1,4 @@
-package in.gov.hp.aadhaar.hpsrdh;
+package in.gov.hp.aadhaar._HPSRDH;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.gov.hp.aadhaar.hpsrdh" >
+    package="in.gov.hp.aadhaar._HPSRDH" >
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".SplashScreen"
+            android:name="in.gov.hp.aadhaar._HPSRDH.SplashScreen"
             android:label="@string/app_name"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">
@@ -26,45 +26,45 @@
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".LoginActivity"
+            android:name="in.gov.hp.aadhaar._HPSRDH.LoginActivity"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".SignIn"
+            android:name="in.gov.hp.aadhaar._HPSRDH.SignIn"
             android:label="@string/title_activity_sign_in"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ViewPagerStyle1Activity"
+            android:name="in.gov.hp.aadhaar._HPSRDH.ViewPagerStyle1Activity"
             android:launchMode="singleInstance"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".LogOut"
+            android:name="in.gov.hp.aadhaar._HPSRDH.LogOut"
             android:label="@string/title_activity_log_out"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".AdvancedListFive"
+            android:name="in.gov.hp.aadhaar._HPSRDH.AdvancedListFive"
             android:label="@string/title_activity_user_list"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".UserDetailsSearch"
+            android:name="in.gov.hp.aadhaar._HPSRDH.UserDetailsSearch"
             android:label="@string/title_activity_user_details_search"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".UID_Search_List"
+            android:name="in.gov.hp.aadhaar._HPSRDH.UID_Search_List"
             android:label="@string/title_activity_uid__search__list"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".EID_Search_List"
+            android:name="in.gov.hp.aadhaar._HPSRDH.EID_Search_List"
             android:label="@string/title_activity_eid__search__list"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">

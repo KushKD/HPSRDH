@@ -1,6 +1,4 @@
-package in.gov.hp.aadhaar.hpsrdh;
-
-import android.util.Log;
+package in.gov.hp.aadhaar._HPSRDH;
 
 import java.io.BufferedReader;
 import java.io.IOException;
